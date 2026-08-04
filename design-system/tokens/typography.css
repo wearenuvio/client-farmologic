@@ -1,0 +1,28 @@
+:root{
+--font-display:'Cormorant Garamond',Georgia,serif; /* Nature — headlines, display */
+--font-body:'Montserrat',-apple-system,sans-serif; /* Science — body, UI, labels */
+--font-data:'Montserrat',monospace; /* lab-data readouts: tabular-nums + tracking */
+/* Scale */
+--text-display-xl:clamp(44px,6vw,84px);
+--text-display:clamp(36px,4.5vw,60px);
+--text-h2:clamp(28px,3.2vw,44px);
+--text-h3:26px;
+--text-lead:19px;
+--text-body-size:16px;
+--text-small:14px;
+--text-label:12px;
+--text-caption:11px;
+/* Weights */
+--weight-display:600; /* Cormorant 600 */
+--weight-display-light:500;
+--weight-body:400;
+--weight-medium:500;
+--weight-semibold:600;
+/* Tracking */
+--tracking-label:.32em; /* uppercase Montserrat labels */
+--tracking-label-tight:.22em;
+--tracking-display:.01em;
+/* Leading */
+--leading-display:1.08;
+--leading-body:1.65;
+}

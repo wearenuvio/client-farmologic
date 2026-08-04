@@ -1,0 +1,34 @@
+:root{
+/* Base palette — locked, from brand sheet */
+--forest:#1E3D2B;
+--forest-deep:#132A1D;
+--sage:#6B8A5E;
+--olive:#7C8B4A;
+--ivory:#F6F4EE;
+--charcoal:#1A1A1A;
+--gold:#C8A24A;
+--mist:#E8EDE4;
+--leaf-light:#A9BE7E;
+--hairline:#D8D3C6;
+/* Semantic aliases */
+--surface-page:var(--ivory);
+--surface-card:#FBFAF5;
+--surface-tint:var(--mist);
+--surface-dark:var(--forest);
+--gradient-dark:linear-gradient(180deg,#132A1D 0%,#1E3D2B 100%); /* @kind color */
+--text-heading:var(--forest);
+--text-body:var(--charcoal);
+--text-muted:#5C5A52;
+--text-on-dark:var(--ivory);
+--text-on-dark-muted:rgba(246,244,238,.68);
+--accent:var(--gold);
+--accent-botanical:var(--olive);
+--accent-on-dark:var(--leaf-light);
+--border-hairline:var(--hairline);
+--border-hairline-on-dark:rgba(246,244,238,.18);
+--border-gold:rgba(200,162,74,.55);
+/* Glass (dark grounds only) */
+--glass-bg:rgba(246,244,238,.06);
+--glass-border:rgba(246,244,238,.14);
+--glass-blur:14px;
+}

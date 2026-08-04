@@ -1,0 +1,12 @@
+:root{
+--shadow-card:0 1px 2px rgba(26,26,26,.05),0 8px 28px rgba(26,26,26,.07);
+--shadow-lift:0 2px 6px rgba(26,26,26,.08),0 18px 48px rgba(26,26,26,.12);
+--shadow-none:none;
+/* Gold devices */
+--rule-gold:1px solid var(--gold);
+--frame-gold-inset:0 0 0 1px rgba(200,162,74,.5) inset;
+/* Motion */
+--ease-out:cubic-bezier(.22,.61,.36,1); /* @kind other */
+--dur-fast:180ms; /* @kind other */
+--dur-reveal:700ms; /* @kind other */
+}

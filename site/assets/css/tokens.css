@@ -1,0 +1,96 @@
+/* Farmologic design tokens — imported verbatim from the Farmologic Design System
+   (claude.ai/design project 069f79f9). Do not edit here: edit the design system,
+   re-export, and re-concatenate. Source files: tokens/{fonts,colors,typography,spacing,effects}.css */
+
+/* Brand typefaces — both are Google Fonts (per the official brand sheet):
+   Cormorant Garamond 500/600 (display) · Montserrat 400/500/600 (body/UI). */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap');
+
+:root{
+/* Base palette — locked, from brand sheet */
+--forest:#1E3D2B;
+--forest-deep:#132A1D;
+--sage:#6B8A5E;
+--olive:#7C8B4A;
+--ivory:#F6F4EE;
+--charcoal:#1A1A1A;
+--gold:#C8A24A;
+--mist:#E8EDE4;
+--leaf-light:#A9BE7E;
+--hairline:#D8D3C6;
+/* Semantic aliases */
+--surface-page:var(--ivory);
+--surface-card:#FBFAF5;
+--surface-tint:var(--mist);
+--surface-dark:var(--forest);
+--gradient-dark:linear-gradient(180deg,#132A1D 0%,#1E3D2B 100%); /* @kind color */
+--text-heading:var(--forest);
+--text-body:var(--charcoal);
+--text-muted:#5C5A52;
+--text-on-dark:var(--ivory);
+--text-on-dark-muted:rgba(246,244,238,.68);
+--accent:var(--gold);
+--accent-botanical:var(--olive);
+--accent-on-dark:var(--leaf-light);
+--border-hairline:var(--hairline);
+--border-hairline-on-dark:rgba(246,244,238,.18);
+--border-gold:rgba(200,162,74,.55);
+/* Glass (dark grounds only) */
+--glass-bg:rgba(246,244,238,.06);
+--glass-border:rgba(246,244,238,.14);
+--glass-blur:14px;
+}
+
+:root{
+--font-display:'Cormorant Garamond',Georgia,serif; /* Nature — headlines, display */
+--font-body:'Montserrat',-apple-system,sans-serif; /* Science — body, UI, labels */
+--font-data:'Montserrat',monospace; /* lab-data readouts: tabular-nums + tracking */
+/* Scale */
+--text-display-xl:clamp(44px,6vw,84px);
+--text-display:clamp(36px,4.5vw,60px);
+--text-h2:clamp(28px,3.2vw,44px);
+--text-h3:26px;
+--text-lead:19px;
+--text-body-size:16px;
+--text-small:14px;
+--text-label:12px;
+--text-caption:11px;
+/* Weights */
+--weight-display:600; /* Cormorant 600 */
+--weight-display-light:500;
+--weight-body:400;
+--weight-medium:500;
+--weight-semibold:600;
+/* Tracking */
+--tracking-label:.32em; /* uppercase Montserrat labels */
+--tracking-label-tight:.22em;
+--tracking-display:.01em;
+/* Leading */
+--leading-display:1.08;
+--leading-body:1.65;
+}
+
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--space-10:128px;
+--section-pad:96px; /* vertical rhythm between editorial sections */
+--content-max:1200px;
+--content-narrow:720px; /* long-form reading measure */
+/* Radii — the brand is squared/editorial; keep corners tight */
+--radius-none:0;
+--radius-sm:2px; /* cards, inputs */
+--radius-md:6px; /* glass data cards */
+--radius-pill:999px; /* seals, icon rings only */
+}
+
+:root{
+--shadow-card:0 1px 2px rgba(26,26,26,.05),0 8px 28px rgba(26,26,26,.07);
+--shadow-lift:0 2px 6px rgba(26,26,26,.08),0 18px 48px rgba(26,26,26,.12);
+--shadow-none:none;
+/* Gold devices */
+--rule-gold:1px solid var(--gold);
+--frame-gold-inset:0 0 0 1px rgba(200,162,74,.5) inset;
+/* Motion */
+--ease-out:cubic-bezier(.22,.61,.36,1); /* @kind other */
+--dur-fast:180ms; /* @kind other */
+--dur-reveal:700ms; /* @kind other */
+}

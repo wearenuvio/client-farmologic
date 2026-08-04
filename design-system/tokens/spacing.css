@@ -1,0 +1,11 @@
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--space-10:128px;
+--section-pad:96px; /* vertical rhythm between editorial sections */
+--content-max:1200px;
+--content-narrow:720px; /* long-form reading measure */
+/* Radii — the brand is squared/editorial; keep corners tight */
+--radius-none:0;
+--radius-sm:2px; /* cards, inputs */
+--radius-md:6px; /* glass data cards */
+--radius-pill:999px; /* seals, icon rings only */
+}

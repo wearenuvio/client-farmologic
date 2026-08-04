@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Node (none is required to build this site, but tooling may appear later)
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# Local env / secrets — never commit the enquiry endpoint credentials
+.env
+.env.*
+!.env.example
+
+# Build & host artefacts
+dist/
+.cache/
+.netlify/
+.vercel/
