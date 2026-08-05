@@ -7,8 +7,14 @@ The client-facing website for **Farmologic**, built directly on the *Farmologic 
 client-farmologic/
 ├── design-system/     ← the imported design system, verbatim. Reference only; don't edit.
 ├── site/              ← the website. This is the deliverable.
+├── docs/
+│   └── client-brief.md  ← client brief, cleaned from the 4 Aug 2026 call. Read this first.
 └── check.mjs          ← dependency-free integrity check. Run before every handoff.
 ```
+
+**Read `docs/client-brief.md` before changing any copy.** It carries the hard messaging rules (no
+competitor comparison, no "only brand" claim, no unsupported health claims, "purest" not "largest"),
+the agreed launch dates, and a gap list of what the call asked for that the site does not yet do.
 
 To change a colour, a type size, a radius or an easing: change it in the design system, re-export,
 and re-concatenate `design-system/tokens/*.css` into `site/assets/css/tokens.css`. Do not edit

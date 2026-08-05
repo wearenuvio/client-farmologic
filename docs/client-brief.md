@@ -1,0 +1,282 @@
+# Farmologic — client brief
+
+**Source:** client call, 4 August 2026 (cleaned from a raw auto-transcript).
+**Prepared:** 5 August 2026.
+**Status:** working brief. Anything marked ⚠️ is unresolved and needs the client to confirm.
+
+> The transcript was auto-captured and code-switches between English, Kannada and Telugu, so
+> parts are garbled. Everything below is what could be read with confidence. Where a number or
+> a name could not be recovered, it is marked ⚠️ rather than guessed.
+
+---
+
+## 1. Who the client is
+
+Farmologic grows *Cordyceps militaris* indoors in Bengaluru. Pre-revenue. **B2B only, one crop
+only.** Buyers are supplement and nutraceutical brands, contract manufacturers, functional-beverage
+companies, AYUSH formulators and sports-nutrition brands. The single conversion goal on the website
+is a qualified bulk enquiry or a pre-booked sample.
+
+The brand is deliberately **Farmologic, not "the cordyceps company."** Cordyceps is the first crop.
+Turmeric and ginger are planned later (see §8). The client's own analogy: Nandini started with milk,
+became a brand, and now whatever Nandini puts out gets bought on trust. Farmologic is being built
+the same way — brand first, catalogue second.
+
+---
+
+## 2. The core message
+
+Three beats, in this order:
+
+1. **Pain.** Other growers compromise on quality. Cordyceps has real benefits, but when quality is
+   compromised the material loses its potency — and therefore its value.
+2. **Bridge.** Farmologic is transparent. Ask for the lab report and you get it. No adulteration.
+   Organic. Vegan.
+3. **Proof.** Every batch has its own report. You don't have to trust us — we hand you the evidence.
+
+### How adulteration actually happens (client's own explanation — use this, it is the differentiator)
+
+- **Over-harvesting the stalk.** Only a certain length of the fruiting body should be cut. Sellers
+  harvest right down to the bottom to add weight.
+- **Blending in failed bottles.** Production across bottles is never equal — some come out poor or
+  faulty. Instead of discarding them, sellers mix that material into the good batch to make weight.
+
+This is specific, checkable and nobody else is saying it. It is the strongest content on the site.
+
+---
+
+## 3. Hard messaging rules
+
+These came up repeatedly and the client was emphatic. Treat them as constraints, not preferences.
+
+| Rule | Detail |
+| --- | --- |
+| **Do not compare with competitors.** | "We're not competitors for other brands. We just want to give the quality. We are fighting the people who do adulteration." Generic comparison is fine — *generic market cordyceps* vs *a Farmologic batch with its report* — but never name, target or imply a specific brand. |
+| **Do not claim to be the only one.** | Say "one of the brands doing this," never "the only brand." Competitors are already watching; an exclusivity claim invites a challenge. |
+| **Do not make health claims.** | This is a health-adjacent sector. Only state what published research supports, and cite it. If research data is found, include it with the source. |
+| **Purest, not biggest.** | The tagline must not read as "largest in India." Anyone can be largest; not everyone can be purest. Client's reference: diamond certification (IGI / GIA) — certification as the proof of purity. |
+| **Client signs off all copy.** | "You send me, I will finalise it." Nothing publishes without review. |
+| **Simple enough for a ten-year-old.** | No nested navigation, no "go to that page, then this page." One clear path. |
+
+---
+
+## 4. Website requirements from the call
+
+### 4.1 Pre-book a sample — the primary flow
+
+Material does not exist yet, so the ask is a **pre-book**, not a purchase.
+
+- Publish the date sampling opens, e.g. *"Sampling from 1 December."* Buyers will not wait around
+  indefinitely; giving a date sets the expectation and closes the loop.
+- Once someone pre-books, Farmologic contacts them directly and communicates the cycle.
+- Registration fields: **name, work email, company name.** Nothing else.
+- **Email only. No OTP, no phone verification.** Client's reasoning: OTP costs money and is
+  unnecessary — B2B buyers register with a company email address anyway, not a mobile number.
+  OTP can be added later if it is ever needed.
+- Automatic acknowledgement email on registration ("Thank you for contacting Farmologic…"), plus
+  event-triggered notification emails as the cycle progresses.
+
+### 4.2 Harvest cycle timeline + live status
+
+- Show the cultivation cycle broken into named phases. ("You'll put some good name for each phase.")
+- Show **where the current cycle actually is** — a chart or marker: *we are at this stage now.*
+- Offer a **notify-me / remind-me** on the harvest window. For the first cycle only; from the second
+  cycle onward supply is continuous and the notification stops being interesting.
+- Purpose is transparency and expectation-setting, not urgency marketing. A buyer who knows it takes
+  three to four months can plan their own cycle around it.
+
+### 4.3 Two calls to action
+
+| CTA | Behaviour |
+| --- | --- |
+| **Book / pre-book a sample** | The main conversion. Already the site's primary CTA. |
+| **Know more** | Gated educational asset. Click → give email → receive a PDF. For buyers who want depth before they commit to contact. |
+
+Either way the visitor converts: a sample request or a lead-magnet download.
+
+### 4.4 No brochure at launch
+
+Explicitly rejected for launch — every quotation is customised, so a generic brochure has no job.
+**Later**, once there is real data, build HubSpot-style downloadable assets: a playbook or a short
+illustrated story of how the cultivation works. Brief, not a technical manual. These get attached to
+first-contact outbound emails with a website link in the footer, so the recipient warms up before
+they arrive.
+
+### 4.5 Lab reports on site
+
+- Reports must be **per batch**, each carrying its own date and validity.
+- Client raised this himself as a credibility trap: a supplier showing a report from 2018 tells you
+  nothing about the material in the bag. Farmologic's reports must always be current to the batch.
+- When the first batch ships, its report goes up. Same for every batch after.
+
+### 4.6 Imagery and motion
+
+- Hero background: mushroom growth — fields, cultivation, the organism. **Not stock.** The client
+  is claiming transparency, so stock footage would undercut the whole pitch.
+- Live photos and short video snippets preferred. A subtle bottle/growth animation behind the hero
+  was discussed.
+- **Cycle 1 workaround:** the people training Farmologic already run a working cultivation lab.
+  Farmologic can shoot stage-by-stage photography there. From cycle 2, everything is shot in their
+  own facility.
+
+### 4.7 Blog / SEO
+
+- Content strategy still to be planned. Real material arrives once R&D starts and there is ground
+  data to write from.
+- SEO will take roughly three months to show anything. Not a launch priority — there is no product
+  data yet to rank on. "We are just launching the website to stay."
+
+---
+
+## 5. Numbers discussed
+
+| Item | Value | Confidence |
+| --- | --- | --- |
+| Yield per bottle | 4–5 g dried | Stated clearly |
+| Bottles per kg | ~600 | Stated clearly (derived from above) |
+| Target first-harvest volume | 15 kg | **Do not publish** — see below |
+| Realistic worst case | ~5 kg | Stated clearly |
+| Harvest timing | Late November if all goes well | Stated clearly |
+| Sampling opens | 1 December | Stated clearly |
+| Buyer planning horizon | 3–4 months | Stated clearly |
+| Cycles per year | 4–5 discussed | Approximate |
+| Sample size | ⚠️ 10 g and 1 kg both appear in the transcript | **Unresolved** |
+| "Out of 60…" | ⚠️ Deductions for samples, contamination and wastage, but the base figure is garbled | **Unresolved** |
+| Competitor reference price | ~₹1,000 for 60 capsules | Stated, as an illustration that capsule pricing does not convert linearly to per-kg |
+
+### Volume must not be published
+
+The client was firm: **do not put a harvest figure on the website.** It is a brand-new facility,
+contamination risk is real, and he refuses to give a false claim of 10 or 15 kg and then miss it.
+The current site already avoids stating volume — keep it that way.
+
+---
+
+## 6. Market context (client's read)
+
+- Most cordyceps and cordyceps byproducts consumed in India are **imported**. Almost nothing is
+  grown domestically at scale.
+- The US and Australia treat it as a routine daily supplement. India does not — low awareness, high
+  price, few people investigate it.
+- **Format economics:** powder is the highest *volume* — most players sell powder or raw dried.
+  Liquid extract and capsules are the highest *value* and almost nobody in India is doing them
+  ("every 2% is doing that"). Extract is very expensive per drop.
+- Consequence: **whoever educates the market first gets the customer.** That is the strategic
+  argument for the Learn content and the lead-magnet PDFs.
+- Positioning analogy the client used: matcha. There are many teas; matcha carved out a position on
+  specific, communicable benefits. Cordyceps needs the same treatment.
+- Dosage note: not more than 1 g per day. Comparable products it can displace — pre-workout,
+  nitric-oxide boosters, vitamin C, ashwagandha. ⚠️ *Any claim of this kind needs research backing
+  before it goes near the site.*
+
+---
+
+## 7. Go-to-market
+
+### 7.1 Target list (Nuvio to build)
+
+- Start from companies already selling cordyceps **byproducts** — capsules, powders, blends. None of
+  them claim to grow it, and none disclose where they buy it.
+- From each: work out where they source raw material, pull published revenue, and estimate spend on
+  raw material and margin.
+- Use that to calculate what margin Farmologic can offer, and pitch on that number. A pitch with a
+  margin in it is far stronger than a cold introduction.
+- Client's caution: the large brands will not deal direct. The realistic targets are the
+  **sourcing agents and distributors** who supply them.
+- ⚠️ Whether public revenue data is granular enough to derive raw-material spend is untested. Nuvio
+  to attempt it; if the data is not there, fall back to a straight introduction pitch.
+
+### 7.2 Channels
+
+| Channel | Plan |
+| --- | --- |
+| **Email** | Broadcast roughly monthly, fixed formats, from the list above. Company addresses, not individuals. |
+| **LinkedIn** | Scrape relevant companies, send custom DMs, plus LinkedIn's paid message promotions (into inbox, not feed ads). |
+| **Conferences / expos** | Rated the highest-value channel. Health-and-wellness expos put like-minded, informed people in one room, so no education overhead. A Bengaluru event has already been attended and produced contacts. **Delhi — International Health and Wellness Expo** is the target; the client considers Delhi the more valuable audience. ⚠️ A 25 September event was mentioned but the location did not transcribe reliably. |
+
+### 7.3 Commercial goal
+
+One genuine buyer taking the full ~15 kg for a year effectively sells out the first harvest, and
+removes most of the marketing burden. Five to six years of that generates the capital to expand.
+
+---
+
+## 8. Roadmap beyond launch
+
+- **R&D team.** Nutritionists and biotech lab staff hired to work on the cultivation itself and
+  produce real data. Needed for large-scale production, and it becomes credibility content.
+- **B2C — deliberately deferred.** Reasons given: established players and an entrenched hierarchy
+  make direct entry hard; B2C needs 500–1,000 kg to be viable; and running B2C while supplying B2B
+  risks competing with your own customers. Get strong in B2B first, then B2C is low-risk and,
+  in the client's words, "a lot of fun" — multiple products, multiple interactions.
+- **Other crops.** Turmeric and ginger. The reference case is Dr. Reddy's importing turmeric and
+  ginger from Indonesia because the curcumin percentage there is far higher — soil and water tuned
+  for the active compound. Same playbook, applied domestically. Needs a lot of land, so it is far out.
+- **Experiential.** A cordyceps coffee / café concept with the grow setup visible on site. Late-phase.
+
+**Philosophy the client wants carried through:** service-oriented, not commercially opportunistic.
+Build the thing properly from scratch rather than white-labelling from a contract lab — which he
+noted is what most cosmetic brands do, and which works only if money is the only goal.
+
+---
+
+## 9. Timeline agreed on the call
+
+| Date | Milestone |
+| --- | --- |
+| **15th** | Website finalised, after a couple of review iterations |
+| **21st** | **Launch. Hard date.** |
+| **22nd** | Team group meeting; post-launch review |
+| After launch | Brochure, visiting cards, packaging — one at a time |
+| Late Nov | First harvest, if all goes well |
+| 1 Dec | Sampling opens |
+
+⚠️ The month was not stated for the 15th / 21st / 22nd. August 2026 is the obvious reading given
+the call date, but confirm.
+
+**Expectation set explicitly:** if nobody contacts them for a month after launch, that is fine and
+not a failure signal. "Let us not expect anything. Trust the process."
+
+---
+
+## 10. Email and domain
+
+- Client has access to both the domain and email; Nuvio has been given access.
+- Custom `@farmologic.com` addresses to be configured before launch. Nuvio to be added as a team
+  member so access does not have to be requested each time.
+- Automated mail needed for: contact acknowledgement, pre-book confirmation, harvest-stage
+  notification.
+- ⚠️ The site currently uses `trade@farmologic.com` throughout. Confirm or change.
+
+---
+
+## 11. What this changes on the site as built
+
+The current build already satisfies the brand rules — no competitor comparison, no exclusivity
+claim, no unsupported health claims, transparency and per-batch COA as the spine, volume not
+published. These are the **gaps** the call opened up:
+
+| # | Gap | Notes |
+| --- | --- | --- |
+| 1 | **Pre-book sample flow** | Site has a general enquiry form. Needs a distinct pre-book path: name / work email / company, an acknowledgement email, and a stated "sampling opens 1 December". |
+| 2 | **Live cycle status** | The grow timeline is built but static. Needs a current-stage marker that the client can move as the cycle progresses. |
+| 3 | **Notify-me on harvest** | Not built. First cycle only. |
+| 4 | **"Know more" lead magnet** | Second CTA and gated PDF not built. Asset does not exist yet either. |
+| 5 | **Lab report section** | Site promises a COA per batch but has nowhere to publish them. Needs a reports area with batch number and date, built so a stale report is structurally impossible to leave up. |
+| 6 | **Real imagery** | Only one clean product photograph exists. Arrange the stage-by-stage shoot at the trainer's facility for cycle 1. |
+| 7 | **Dates** | Site says first cultivation Sep 2026, first harvest Dec 2026. Call refines this to harvest late November, sampling from 1 December. Update once confirmed. |
+| 8 | **Specification figures** | Cordycepin ≥ 0.5 % w/w, moisture ≤ 8 %, 80 mesh, 1 kg MOQ, 50 g sample, 4–6 week lead time and the grow set points on the site are **drafted placeholders, not client-supplied**. They are labelled as targets, but all of them need sign-off — and the sample size specifically conflicts with the call (see §5). |
+| 9 | **Adulteration content** | The two mechanisms in §2 are the single strongest differentiator discussed and are not yet on the site. Add them, framed as "how adulteration happens in this category" — never as an accusation against a named party. |
+
+---
+
+## 12. Open questions for the client
+
+1. **Sample size** — 10 g or 1 kg? The transcript has both. (§5)
+2. **Launch month** — is the 21st in August? (§9)
+3. **September 25 event** — which city? (§7.2)
+4. **Specification figures** — confirm or replace every number in §11 row 8 before launch.
+5. **Email address** — is `trade@farmologic.com` correct?
+6. **Research citations** — does the client have papers to support the energy / stamina / immunity
+   framing, or should the site stay descriptive until R&D produces its own?
+7. **Byproduct company list** — client to send; Nuvio to enrich and derive margins. (§7.1)
