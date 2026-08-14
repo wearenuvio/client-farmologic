@@ -91,7 +91,7 @@ const tokens = new Set(
   [...readFileSync(join(root, 'assets/css/tokens.css'), 'utf8').matchAll(/--([\w-]+)\s*:/g)].map((m) => m[1])
 );
 // Locally-scoped custom properties set inline in HTML, not design tokens.
-const localVars = new Set(['reveal-delay']);
+const localVars = new Set(['reveal-delay', 'gold-text']);
 for (const [, name] of css.matchAll(/var\(--([\w-]+)/g)) {
   if (!tokens.has(name) && !localVars.has(name)) {
     issues.push(`site.css: var(--${name}) is not defined in tokens.css`);
