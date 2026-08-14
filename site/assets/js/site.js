@@ -10,6 +10,28 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ------------------------------------------------------------ preloader */
+
+  var preloader = document.querySelector('[data-preloader]');
+  if (preloader) {
+    var dismiss = function () {
+      preloader.classList.add('is-done');
+      window.setTimeout(function () {
+        if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+      }, 500);
+    };
+
+    if (reduceMotion) {
+      dismiss();
+    } else if (document.readyState === 'complete') {
+      window.setTimeout(dismiss, 220);
+    } else {
+      window.addEventListener('load', function () { window.setTimeout(dismiss, 220); });
+      /* Never trap the visitor behind it if something stalls. */
+      window.setTimeout(dismiss, 4000);
+    }
+  }
+
   /* ---------------------------------------------------------------- header */
 
   var header = document.querySelector('.site-header');

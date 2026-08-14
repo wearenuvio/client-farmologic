@@ -8,7 +8,8 @@ client-farmologic/
 ├── design-system/     ← the imported design system, verbatim. Reference only; don't edit.
 ├── site/              ← the website. This is the deliverable.
 ├── docs/
-│   └── client-brief.md  ← client brief, cleaned from the 4 Aug 2026 call. Read this first.
+│   ├── client-brief.md  ← cleaned from the 4 Aug 2026 call. Read this first; it wins on facts.
+│   └── brand-brief.md   ← brand platform, voice and locked visual identity, from the brand deck.
 └── check.mjs          ← dependency-free integrity check. Run before every handoff.
 ```
 

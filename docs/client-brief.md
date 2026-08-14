@@ -8,6 +8,10 @@
 > parts are garbled. Everything below is what could be read with confidence. Where a number or
 > a name could not be recovered, it is marked ⚠️ rather than guessed.
 
+**Companion document:** [`brand-brief.md`](brand-brief.md) covers the brand platform, voice and
+locked visual identity, sourced from the brand deck and the supplied creatives. This file is
+authoritative wherever the two disagree — it comes from the client directly.
+
 ---
 
 ## 1. Who the client is
@@ -266,7 +270,21 @@ published. These are the **gaps** the call opened up:
 | 6 | **Real imagery** | Only one clean product photograph exists. Arrange the stage-by-stage shoot at the trainer's facility for cycle 1. |
 | 7 | **Dates** | Site says first cultivation Sep 2026, first harvest Dec 2026. Call refines this to harvest late November, sampling from 1 December. Update once confirmed. |
 | 8 | **Specification figures** | Cordycepin ≥ 0.5 % w/w, moisture ≤ 8 %, 80 mesh, 1 kg MOQ, 50 g sample, 4–6 week lead time and the grow set points on the site are **drafted placeholders, not client-supplied**. They are labelled as targets, but all of them need sign-off — and the sample size specifically conflicts with the call (see §5). |
-| 9 | **Adulteration content** | The two mechanisms in §2 are the single strongest differentiator discussed and are not yet on the site. Add them, framed as "how adulteration happens in this category" — never as an accusation against a named party. |
+| 9 | ~~**Adulteration content**~~ | ✅ **Done.** Both mechanisms are now on the site: a dark section on the home page (`index.html#how-weight-gets-added`) and a long-form lead article on `learn.html#adulteration`, framed as category mechanics with an explicit "we are not accusing any supplier and not setting ourselves against other brands" line. |
+
+### Applied in the copy pass (August 2026)
+
+| Change | Detail |
+| --- | --- |
+| Dates corrected | Harvest is now stated as late November 2026 and sampling as opening 1 December 2026, across all seven pages, meta descriptions and the FAQ JSON-LD. "First harvest · December 2026" eyebrows became "Sampling opens · 1 December 2026". |
+| Pre-book language | Every CTA now reads "Pre-book a Sample" rather than "Request a Sample", with hero microcopy stating the sampling date and the three fields required. |
+| Sample size removed | The 50 g figure contradicted the call (§5 has 10 g and 1 kg unresolved) and was never client-supplied. Now "On enquiry" everywhere, including the FAQ JSON-LD. |
+| Client copy used verbatim | MGM's 9 Aug quality copy is the philosophy section on the home page, and "The finest harvest begins with the highest standards" is its pull quote. |
+| Exclusivity softened | "the only honest way to promise the same result twice" → "what lets us promise the same result twice". No remaining phrasing implies Farmologic is the only party doing this. |
+| Volume | Still not published anywhere, per §5. |
+
+Still open from §11: pre-book form fields and acknowledgement email (1), live cycle status (2),
+notify-me (3), lead magnet (4), lab-report area (5), real imagery (6), specification sign-off (8).
 
 ---
 

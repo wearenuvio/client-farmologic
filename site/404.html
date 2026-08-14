@@ -16,6 +16,11 @@
 <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
 <body>
+<div class="preloader" data-preloader aria-hidden="true">
+  <img class="preloader__mark" src="assets/img/logo-mark.png" alt="" width="180" height="180">
+  <span class="preloader__bar"><span class="preloader__fill"></span></span>
+</div>
+
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
@@ -28,11 +33,11 @@
       <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a class="site-nav__link" href="index.html">Home</a>
       <a class="site-nav__link" href="standard.html">The Standard</a>
-      <a class="site-nav__link" href="cordyceps.html">Cordyceps</a>
       <a class="site-nav__link" href="learn.html">Learn</a>
       <a class="site-nav__link" href="about.html">About</a>
-      <a class="fm-btn fm-btn--gold fm-btn--sm" href="enquiry.html">Request a Sample</a>
+      <a class="fm-btn fm-btn--gold fm-btn--sm" href="index.html#enquiry">Pre-book a Sample</a>
     </nav>
   </div>
 </header>
@@ -46,7 +51,7 @@
       <p class="lead" style="margin-inline:auto">The page you asked for is not here. Everything worth reading is one click away.</p>
       <div class="hero__actions" style="justify-content:center">
         <a class="fm-btn fm-btn--gold" href="index.html">Back to home</a>
-        <a class="fm-btn fm-btn--outline-dark" href="cordyceps.html">See the specification</a>
+        <a class="fm-btn fm-btn--outline-dark" href="standard.html">The Standard</a>
       </div>
     </div>
   </section>

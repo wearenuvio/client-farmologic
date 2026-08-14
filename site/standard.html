@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Farmologic Standard — how every batch is grown and verified | Farmologic</title>
-<meta name="description" content="The Farmologic Standard: every batch watched as it grows, verified in the lab, certified. The five-stage quality journey, grow parameters, testing panel and the documentation that ships with each batch.">
+<title>The Farmologic Standard: how every batch is grown and verified | Farmologic</title>
+<meta name="description" content="The Farmologic Standard: every batch watched as it grows, verified in the lab, certified. The five-stage quality journey, specification, testing panel and the documentation that ships with each batch.">
 <link rel="canonical" href="https://farmologic.com/standard.html">
 <meta name="theme-color" content="#132A1D">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://farmologic.com/standard.html">
 <meta property="og:title" content="The Farmologic Standard">
 <meta property="og:description" content="Every batch. Watched as it grows. Verified in the lab. Certified.">
-<meta property="og:image" content="https://farmologic.com/assets/img/editorial-quality.jpeg">
+<meta property="og:image" content="https://farmologic.com/assets/img/hero-c.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="assets/img/logo-mark.png" sizes="any">
@@ -28,6 +28,11 @@
 <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
 <body>
+<div class="preloader" data-preloader aria-hidden="true">
+  <img class="preloader__mark" src="assets/img/logo-mark.png" alt="" width="180" height="180">
+  <span class="preloader__bar"><span class="preloader__fill"></span></span>
+</div>
+
 <a class="skip-link" href="#main">Skip to content</a>
 
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
@@ -51,11 +56,11 @@
       <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a class="site-nav__link" href="index.html">Home</a>
       <a class="site-nav__link" href="standard.html" aria-current="page">The Standard</a>
-      <a class="site-nav__link" href="cordyceps.html">Cordyceps</a>
       <a class="site-nav__link" href="learn.html">Learn</a>
       <a class="site-nav__link" href="about.html">About</a>
-      <a class="fm-btn fm-btn--gold fm-btn--sm" href="enquiry.html">Request a Sample</a>
+      <a class="fm-btn fm-btn--gold fm-btn--sm" href="index.html#enquiry">Pre-book a Sample</a>
     </nav>
   </div>
 </header>
@@ -67,7 +72,7 @@
       <span class="fm-label">The Farmologic Standard</span>
       <h1 class="display">Every batch. Watched as it grows.<br><span class="hl">Verified in the lab.</span> Certified.</h1>
       <div class="fm-rule"></div>
-      <p class="lead">A promise is only worth what it costs to keep. This page sets out what the Farmologic Standard obliges us to do, at every stage, on every batch — so you can check whether we did it.</p>
+      <p class="lead">A promise is only worth what it costs to keep. This page sets out what the Farmologic Standard obliges us to do, at every stage, on every batch, so you can check whether we did it.</p>
     </div>
   </section>
 
@@ -120,11 +125,11 @@
             <div class="fm-seal">
               <svg viewBox="0 0 132 132">
                 <defs>
-                  <path id="seal-top" d="M 12,66 A 54,54 0 0 1 120,66" fill="none"></path>
-                  <path id="seal-bottom" d="M 18,66 A 48,48 0 0 0 114,66" fill="none"></path>
+                  <path id="seal-top" d="M 18,66 A 48,48 0 0 1 114,66" fill="none"></path>
+                  <path id="seal-bottom" d="M 11,66 A 55,55 0 0 0 121,66" fill="none"></path>
                 </defs>
-                <circle cx="66" cy="66" r="65" fill="none" stroke="currentColor" stroke-width="1"></circle>
-                <circle cx="66" cy="66" r="58" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1 3.5" opacity=".65"></circle>
+                <circle cx="66" cy="66" r="65" fill="var(--ivory)" stroke="var(--gold)" stroke-width="1"></circle>
+                <circle cx="66" cy="66" r="58" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="1 3.5" opacity=".8"></circle>
                 <text><textPath href="#seal-top" startOffset="50%" text-anchor="middle">LAB-VERIFIED</textPath></text>
                 <text class="seal-sub"><textPath href="#seal-bottom" startOffset="50%" text-anchor="middle">NATURE · SCIENCE · WELLNESS</textPath></text>
                 <image href="assets/img/logo-mark.png" x="45" y="44" width="42" height="42"></image>
@@ -142,7 +147,7 @@
           <li class="fm-glass reveal">
             <span class="fm-label fm-label--leaf">02 · Controlled grow</span>
             <h3 class="timeline__phase" style="font-size:24px;margin-top:var(--space-2)">Hold the conditions, log the proof</h3>
-            <p class="small">Temperature, relative humidity, CO₂ and photoperiod are held to set points for each phase and logged continuously. Deviations are recorded with the corrective action taken. Contaminated units are pulled, counted and destroyed — never blended into a good batch to make up weight.</p>
+            <p class="small">Temperature, relative humidity, CO₂ and photoperiod are held to set points for each phase and logged continuously. Deviations are recorded with the corrective action taken. Contaminated units are pulled, counted and destroyed, never blended into a good batch to make up weight.</p>
           </li>
           <li class="fm-glass reveal">
             <span class="fm-label fm-label--leaf">03 · Harvest &amp; drying</span>
@@ -152,74 +157,43 @@
           <li class="fm-glass reveal">
             <span class="fm-label fm-label--leaf">04 · Lab verification</span>
             <h3 class="timeline__phase" style="font-size:24px;margin-top:var(--space-2)">Certify before release</h3>
-            <p class="small">A representative sample goes to a third-party laboratory for cordycepin and adenosine by HPLC, plus heavy metals, microbiology and pesticide residue. The batch is not released — and cannot be invoiced — until the certificate is back and inside specification.</p>
+            <p class="small">A representative sample goes to a third-party laboratory for cordycepin and adenosine by HPLC, plus heavy metals, microbiology and pesticide residue. The batch is not released, and cannot be invoiced, until the certificate is back and inside specification.</p>
           </li>
         </ol>
       </div>
     </div>
   </section>
 
-  <!-- ============================================ grow parameters ======= -->
-  <section class="section">
-    <div class="shell">
-      <div class="center reveal">
-        <span class="fm-label">Grow parameters</span>
-        <h2 class="h2" style="margin-top:var(--space-4)">What we hold, and when</h2>
-        <div class="fm-rule"></div>
-        <p class="lead" style="margin-inline:auto">Set points by phase for a standard Farmologic cycle. Actuals are logged and retained against the batch record.</p>
-      </div>
-
-      <div class="fm-card reveal" style="margin-top:var(--space-8);padding:var(--space-7)">
-        <div class="fm-table-wrap">
-          <table class="fm-table">
-            <caption>Cycle set points — Cordyceps militaris</caption>
-            <thead>
-              <tr><th scope="col">Phase</th><th scope="col">Days</th><th scope="col">Temp</th><th scope="col">RH</th><th scope="col">Light</th><th scope="col">CO₂</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">Inoculation</th><td>0–3</td><td>22 °C</td><td>70 %</td><td>Dark</td><td>—</td></tr>
-              <tr><th scope="row">Colonisation</th><td>4–21</td><td>20–22 °C</td><td>65–75 %</td><td>Dark</td><td>Elevated</td></tr>
-              <tr><th scope="row">Primordia</th><td>22–30</td><td>18–20 °C</td><td>85–90 %</td><td>12 h low</td><td>&lt; 1500 ppm</td></tr>
-              <tr><th scope="row">Fruiting</th><td>31–55</td><td>18–20 °C</td><td>80–90 %</td><td>12 h</td><td>&lt; 1000 ppm</td></tr>
-              <tr><th scope="row">Harvest &amp; dry</th><td>56–70</td><td>≤ 45 °C dry</td><td>To ≤ 8 % moisture</td><td>—</td><td>—</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================ test panel ======== -->
-  <section class="section section--tint">
+  <!-- ================================================ specification ===== -->
+  <section class="section" id="spec">
     <div class="shell">
       <div class="split" style="align-items:start">
         <div class="reveal">
-          <span class="fm-label">Verification</span>
-          <h2 class="h2" style="margin-top:var(--space-4)">The panel that decides <span class="hl-olive">release</span></h2>
+          <span class="fm-label">Specification</span>
+          <h2 class="h2" style="margin-top:var(--space-4)">Written down before you <span class="hl-olive">ask for it</span></h2>
           <div class="fm-rule"></div>
-          <p>Testing is done by an independent NABL-accredited laboratory, not in-house. Every line below appears on the certificate of analysis that travels with your batch.</p>
-          <p style="margin-top:var(--space-5)"><a class="fm-btn fm-btn--outline" href="enquiry.html?interest=COA%20request">Request a specimen COA</a></p>
+          <p>These are the things we control and the things we measure. The batch you receive is described by its own certificate of analysis, and where the certificate and this page disagree, the certificate is the truth.</p>
+          <p style="margin-top:var(--space-5)"><a class="fm-btn fm-btn--outline" href="index.html#enquiry">Request the full specification</a></p>
         </div>
 
         <div class="fm-card reveal">
           <div class="fm-table-wrap">
             <table class="fm-table">
-              <caption>Release testing — per batch</caption>
-              <thead><tr><th scope="col">Test</th><th scope="col">Method</th><th scope="col">Limit</th></tr></thead>
+              <caption>Material</caption>
               <tbody>
-                <tr><th scope="row">Cordycepin</th><td>HPLC</td><td>≥ 0.5 % w/w target</td></tr>
-                <tr><th scope="row">Adenosine</th><td>HPLC</td><td>Reported</td></tr>
-                <tr><th scope="row">Moisture</th><td>Loss on drying</td><td>≤ 8 %</td></tr>
-                <tr><th scope="row">Total ash</th><td>Gravimetric</td><td>≤ 8 %</td></tr>
-                <tr><th scope="row">Lead, cadmium, arsenic, mercury</th><td>ICP-MS</td><td>Within FSSAI limits</td></tr>
-                <tr><th scope="row">Total plate count</th><td>Plate</td><td>Within FSSAI limits</td></tr>
-                <tr><th scope="row">Yeast &amp; mould</th><td>Plate</td><td>Within FSSAI limits</td></tr>
-                <tr><th scope="row"><em>E. coli</em>, <em>Salmonella</em></th><td>Culture</td><td>Absent</td></tr>
-                <tr><th scope="row">Pesticide residue</th><td>GC-MS / LC-MS</td><td>Within FSSAI limits</td></tr>
+                <tr><th scope="row">Botanical name</th><td><em>Cordyceps militaris</em> (L.) Fr.</td></tr>
+                <tr><th scope="row">Part used</th><td>Fruiting body only, no mycelium-on-grain</td></tr>
+                <tr><th scope="row">Cultivation</th><td>Indoor, controlled environment, Bengaluru, India</td></tr>
+                <tr><th scope="row">Appearance</th><td>Orange to deep amber, intact fruiting bodies</td></tr>
+                <tr><th scope="row">Irradiation</th><td>None</td></tr>
+                <tr><th scope="row">Allergens</th><td>None added</td></tr>
+                <tr><th scope="row">Packing</th><td>Food-grade aluminium-lined pouch inside a fibre drum</td></tr>
+                <tr><th scope="row">Storage</th><td>Cool, dry, sealed, away from light</td></tr>
+                <tr><th scope="row">Documentation</th><td>Batch certificate of analysis, specification sheet, MSDS, allergen and non-GMO statements</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="caption" style="margin-top:var(--space-5)">Panel issued ahead of first cultivation. Methods and limits are confirmed with the accredited laboratory before first release.</p>
+          <p class="caption" style="margin-top:var(--space-5)">Quantitative limits, shelf life and commercial terms are issued with the specification sheet on enquiry.</p>
         </div>
       </div>
     </div>
@@ -230,17 +204,17 @@
     <div class="shell shell--narrow">
       <div class="fm-quote reveal">
         <blockquote>Excellence is grown,<br><span class="hl">not added later.</span></blockquote>
-        <cite>— Farmologic</cite>
+        <cite>Farmologic</cite>
       </div>
     </div>
   </section>
 
   <section class="cta-band reveal" aria-labelledby="cta-heading">
-    <span class="fm-label fm-label--leaf">First harvest · December 2026</span>
+    <span class="fm-label fm-label--leaf">Pre-book</span>
     <h2 class="display" id="cta-heading" style="margin-top:var(--space-4)">Hold us to the Standard.</h2>
     <div class="fm-rule" style="margin-inline:auto"></div>
     <p>Ask for the specification, the panel and the paperwork before you commit to anything. We would rather be checked than trusted.</p>
-    <p style="margin-top:var(--space-6)"><a class="fm-btn fm-btn--gold fm-btn--lg" href="enquiry.html">Request a Sample</a></p>
+    <p style="margin-top:var(--space-6)"><a class="fm-btn fm-btn--gold fm-btn--lg" href="index.html#enquiry">Pre-book a Sample</a></p>
   </section>
 </main>
 
@@ -255,7 +229,6 @@
         <h2 id="f-site">Site</h2>
         <ul>
           <li><a href="standard.html">The Standard</a></li>
-          <li><a href="cordyceps.html">Cordyceps</a></li>
           <li><a href="learn.html">Learn</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
@@ -263,10 +236,9 @@
       <nav aria-labelledby="f-trade">
         <h2 id="f-trade">Trade</h2>
         <ul>
-          <li><a href="enquiry.html?interest=Bulk%20powder">Bulk enquiry</a></li>
-          <li><a href="enquiry.html?interest=COA%20request">Request a COA</a></li>
-          <li><a href="enquiry.html">Reserve allocation</a></li>
-          <li><a href="cordyceps.html#spec">Specification</a></li>
+          <li><a href="index.html#enquiry">Pre-book a sample</a></li>
+          <li><a href="standard.html#spec">Specification</a></li>
+          <li><a href="index.html#faq">Questions</a></li>
         </ul>
       </nav>
       <div>

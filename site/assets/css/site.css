@@ -102,6 +102,58 @@ hr { border: 0; }
 
 .skip-link:focus { top: var(--space-4); }
 
+/* --- Preloader ------------------------------------------------------------
+   Covers the first paint so the page does not assemble in front of the
+   visitor. Removed on window load; never shown without JS, and skipped
+   entirely under reduced motion.                                          */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-6);
+  background: var(--surface-page);
+  transition: opacity 420ms var(--ease-out), visibility 420ms var(--ease-out);
+}
+
+html:not(.js) .preloader { display: none; }
+
+.preloader__mark {
+  width: 72px;
+  height: auto;
+  animation: fm-pre-breathe 2.4s var(--ease-out) infinite;
+}
+
+.preloader__bar {
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: var(--border-hairline);
+  overflow: hidden;
+}
+
+.preloader__fill {
+  display: block;
+  height: 100%;
+  width: 40%;
+  background: var(--gold);
+  animation: fm-pre-sweep 1.1s var(--ease-out) infinite;
+}
+
+.preloader.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+
+@keyframes fm-pre-breathe {
+  0%, 100% { opacity: .45; transform: scale(.97); }
+  50%      { opacity: 1;   transform: scale(1); }
+}
+
+@keyframes fm-pre-sweep {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(300%); }
+}
+
 /* --------------------------------------------------------------------------
    2. Layout primitives
    -------------------------------------------------------------------------- */
@@ -114,6 +166,11 @@ hr { border: 0; }
 }
 
 .shell--narrow { max-width: var(--content-narrow); }
+
+/* Reading measure that sits inside a full-width shell, so the left edge stays
+   on the same gutter as every other section instead of re-centring. */
+.measure { max-width: 780px; }
+.center .measure { margin-inline: auto; }
 
 .section {
   padding-block: var(--section-pad);
@@ -133,6 +190,56 @@ hr { border: 0; }
 
 .section--forest { background: var(--surface-dark); color: var(--text-on-dark); }
 
+/* Photograph framed on a dark ground — glass border, no card chrome. */
+.figure-dark {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--glass-bg);
+}
+
+.figure-dark img { width: 100%; display: block; }
+
+.figure-dark__frame { display: block; position: relative; overflow: hidden; }
+
+/* Warm stock photography has to be pulled back into the brand's greens before
+   it can sit on a forest ground. */
+.figure-dark--tint img { filter: saturate(.7) brightness(.88) contrast(1.05); }
+
+/* Green wash: `color` takes hue and saturation from the overlay and keeps the
+   photograph's luminance, so the image stays legible instead of flooding. */
+.figure-dark--tint .figure-dark__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--forest);
+  mix-blend-mode: color;
+  opacity: .82;
+}
+
+/* A light vertical fall-off so the caption edge settles into the ground. */
+.figure-dark--tint .figure-dark__frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(19, 42, 29, 0) 45%, rgba(19, 42, 29, .55) 100%);
+}
+
+/* Media that holds its position while a long column scrolls past it. */
+.sticky-media { position: sticky; top: calc(84px + var(--space-6)); }
+
+.figure-dark figcaption {
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-caption);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-on-dark-muted);
+  border-top: 1px solid var(--border-hairline-on-dark);
+}
+
 .section--tint { background: var(--surface-tint); }
 
 .section--dark h1,
@@ -150,12 +257,15 @@ hr { border: 0; }
 
 .split {
   display: grid;
-  grid-template-columns: 6fr 4fr;
+  /* minmax(0, …) so a wide child (a spec table with a min-width) cannot pin
+     the track open and push the grid past the viewport. */
+  grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
   gap: var(--space-9);
   align-items: center;
 }
 
-.split--reverse { grid-template-columns: 4fr 6fr; }
+.split--reverse { grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); }
+.split--even { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8); }
 
 .stack > * + * { margin-top: var(--space-4); }
 .stack-lg > * + * { margin-top: var(--space-6); }
@@ -549,18 +659,13 @@ em, .species { font-style: italic; }
 
 .fm-product:hover { box-shadow: var(--shadow-lift); transform: translateY(-3px); }
 
-/* Product imagery is cropped from the single locked pack photograph. */
+/* ProductCard shot — set a background-image on the element when used. */
 .fm-product__shot {
   height: 260px;
-  background-image: url("../img/products-hero.jpeg");
-  background-size: 300% auto;
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-color: var(--forest-deep);
 }
-
-.fm-product__shot--powder   { background-position: 10% 48%; }
-.fm-product__shot--capsules { background-position: 52% 48%; }
-.fm-product__shot--dried    { background-position: 94% 48%; }
 
 .fm-product__body { padding: var(--space-5) var(--space-5) var(--space-6); flex: 1; display: flex; flex-direction: column; }
 
@@ -612,51 +717,126 @@ em, .species { font-style: italic; }
 .fm-product:hover .fm-product__cta { text-decoration: underline; }
 
 /* --- Forms ---------------------------------------------------------------- */
+
+/* The enquiry card is the site's only conversion point, so it gets more
+   presence than a plain card: gold hairline at the head, generous padding,
+   and fields that read as considered rather than default. */
+.form-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-8);
+  position: relative;
+}
+
+.form-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.form-card__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: 30px;
+  line-height: 1.1;
+  color: var(--forest);
+}
+
+.form-card__intro {
+  font-size: var(--text-small);
+  color: var(--text-muted);
+  margin-top: var(--space-3);
+  max-width: 42ch;
+}
+
+.form-grid { display: grid; gap: var(--space-5); margin-top: var(--space-7); }
+.form-grid--2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.form-grid--3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); }
+
+/* Full-width form: the fields breathe across the whole column, and the
+   consent line sits beside the button rather than stacked above it. */
+.form-card--wide { margin-top: var(--space-7); padding: var(--space-8) var(--space-8) var(--space-7); }
+
+.form-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-top: var(--space-7);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-hairline);
+}
+
+.form-card__foot .fm-checkbox { margin-top: 0; max-width: 46ch; }
+.form-card__foot .fm-btn { margin-top: 0; flex: 0 0 auto; min-width: 220px; }
+
 .fm-field { display: block; }
 
 .fm-field__label {
   font-family: var(--font-body);
   font-weight: var(--weight-semibold);
-  font-size: 11px;
-  letter-spacing: .18em;
+  font-size: 10px;
+  letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--forest);
+  color: var(--text-muted);
   display: block;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
-.fm-field__label .req { color: var(--gold); }
+.fm-field__label .req { color: var(--gold); margin-left: 2px; }
 
 .fm-input,
 .fm-textarea,
 .fm-select {
   font-family: var(--font-body);
-  font-size: 15px;
-  padding: 13px 16px;
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 15px 0 13px;
   width: 100%;
-  border-radius: var(--radius-sm);
-  background: #FFFFFF;
-  border: 1px solid var(--border-hairline);
+  border: 0;
+  border-bottom: 1px solid var(--border-hairline);
+  border-radius: 0;
+  background: transparent;
   color: var(--charcoal);
   transition: border-color var(--dur-fast) var(--ease-out);
 }
+
+.fm-input::placeholder,
+.fm-textarea::placeholder { color: #A9A69C; }
+
+.fm-input:hover,
+.fm-textarea:hover,
+.fm-select:hover { border-bottom-color: var(--olive); }
 
 .fm-input:focus,
 .fm-textarea:focus,
 .fm-select:focus {
   outline: none;
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(200, 162, 74, .14);
+  border-bottom-color: var(--gold);
+  border-bottom-width: 2px;
+  padding-bottom: 12px;
 }
 
-.fm-textarea { resize: vertical; min-height: 132px; }
+.fm-textarea { resize: vertical; min-height: 108px; padding-top: var(--space-3); }
+
+.form-card .fm-btn { margin-top: var(--space-6); }
+
+.form-card .fm-checkbox { margin-top: var(--space-6); }
 
 .fm-select {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23C8A24A' stroke-width='1.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 44px;
+  background-position: right 2px center;
+  padding-right: 32px;
 }
 
 .fm-checkbox {
@@ -697,8 +877,8 @@ em, .species { font-style: italic; }
 .on-dark .fm-input,
 .on-dark .fm-textarea,
 .on-dark .fm-select {
-  background: rgba(246, 244, 238, .06);
-  border-color: rgba(246, 244, 238, .25);
+  background: transparent;
+  border-bottom-color: rgba(246, 244, 238, .28);
   color: var(--ivory);
 }
 
@@ -712,7 +892,7 @@ em, .species { font-style: italic; }
 .hp { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
 
 /* --- Data table (spec sheets) -------------------------------------------- */
-.fm-table-wrap { overflow-x: auto; }
+.fm-table-wrap { overflow-x: auto; min-width: 0; -webkit-overflow-scrolling: touch; }
 
 .fm-table {
   width: 100%;
@@ -907,10 +1087,10 @@ em, .species { font-style: italic; }
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-image: url("../img/products-hero.jpeg");
+  background-image: url("../img/hero-c.jpg");
   background-size: cover;
-  background-position: 72% 58%;
-  opacity: .85;
+  background-position: center 55%;
+  opacity: .9;
 }
 
 .hero__scrim {
@@ -918,8 +1098,8 @@ em, .species { font-style: italic; }
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(19, 42, 29, .97) 0%, rgba(19, 42, 29, .93) 34%, rgba(19, 42, 29, .55) 62%, rgba(19, 42, 29, .12) 100%),
-    linear-gradient(180deg, rgba(19, 42, 29, .7) 0%, rgba(19, 42, 29, .1) 40%, rgba(19, 42, 29, .78) 100%);
+    linear-gradient(90deg, rgba(19, 42, 29, .98) 0%, rgba(19, 42, 29, .95) 40%, rgba(19, 42, 29, .62) 66%, rgba(19, 42, 29, .18) 100%),
+    linear-gradient(180deg, rgba(19, 42, 29, .74) 0%, rgba(19, 42, 29, .18) 42%, rgba(19, 42, 29, .82) 100%);
 }
 
 .hero__canvas {
@@ -932,7 +1112,20 @@ em, .species { font-style: italic; }
 
 .hero__inner { max-width: 880px; }
 
-.hero .display-xl { color: var(--ivory); margin-top: var(--space-5); }
+.hero .display-xl {
+  color: var(--ivory);
+  margin-top: var(--space-5);
+  /* Cormorant is a light-stemmed serif and the hero sits on a photograph.
+     Slightly looser tracking, a touch more leading and a soft shadow buy back
+     the legibility without changing the brand typeface. */
+  letter-spacing: .012em;
+  line-height: 1.12;
+  text-shadow: 0 1px 2px rgba(19, 42, 29, .45), 0 12px 40px rgba(19, 42, 29, .55);
+}
+
+.hero__sub {
+  text-shadow: 0 1px 12px rgba(19, 42, 29, .6);
+}
 
 .hero__sub {
   font-size: var(--text-lead);
@@ -1058,12 +1251,14 @@ em, .species { font-style: italic; }
 
 .timeline__phase {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 26px;
   color: var(--ivory);
   line-height: 1.15;
+  margin-top: var(--space-2);
 }
 
 .timeline__day {
+  display: block;
   font-family: var(--font-data);
   font-size: 10px;
   letter-spacing: .25em;
@@ -1167,7 +1362,7 @@ em, .species { font-style: italic; }
 /* CTA band */
 .cta-band {
   background: var(--gradient-dark);
-  padding: var(--space-9) var(--space-6);
+  padding-block: var(--space-9);
   text-align: center;
   position: relative;
   color: var(--ivory);
@@ -1177,7 +1372,7 @@ em, .species { font-style: italic; }
 .cta-band::after {
   content: "";
   position: absolute;
-  inset: 16px;
+  inset: var(--space-5) max(var(--space-5), calc((100% - var(--content-max)) / 2 + var(--space-5)));
   border: 1px solid var(--border-gold);
   opacity: .6;
   pointer-events: none;
@@ -1203,6 +1398,7 @@ em, .species { font-style: italic; }
 
 .journal-card:hover { box-shadow: var(--shadow-lift); transform: translateY(-2px); }
 
+.journal-card h2,
 .journal-card h3 {
   font-family: var(--font-display);
   font-size: 24px;
@@ -1285,6 +1481,28 @@ em, .species { font-style: italic; }
 .reveal.is-in,
 .no-js .reveal { opacity: 1; transform: none; }
 
+/* Scroll-linked reveal. Where the browser supports scroll-driven animations
+   the reveal is tied to scroll position rather than fired once by the
+   IntersectionObserver, so cards rise as you scroll instead of snapping in.
+   Everything else falls back to the observer above — no library needed. */
+@supports (animation-timeline: view()) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: fm-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 22%;
+  }
+
+  @keyframes fm-reveal {
+    from { opacity: 0; transform: translateY(34px) scale(.988); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+
+
 /* Without JS nothing may stay hidden. */
 html:not(.js) .reveal { opacity: 1; transform: none; }
 
@@ -1300,7 +1518,7 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
     scroll-behavior: auto !important;
   }
 
-  .reveal { opacity: 1 !important; transform: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; animation: none !important; }
   .hero__canvas { display: none; }
 }
 
@@ -1310,10 +1528,13 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 
 @media (max-width: 1080px) {
   .split,
-  .split--reverse { grid-template-columns: 1fr; gap: var(--space-7); }
+  .split--reverse { grid-template-columns: minmax(0, 1fr); gap: var(--space-7); }
   .site-footer__grid { grid-template-columns: 1fr 1fr; }
   .journey { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: var(--space-6); }
   .journey::before { display: none; }
+  .split--even { grid-template-columns: minmax(0, 1fr); }
+  .sticky-media { position: static; }
+  .form-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 900px) {
@@ -1363,6 +1584,12 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .grid--3,
   .grid--4 { grid-template-columns: 1fr; }
 
+  .form-grid--2,
+  .form-grid--3 { grid-template-columns: 1fr; }
+  .form-card--wide { padding: var(--space-6); }
+  .form-card__foot { flex-direction: column; align-items: stretch; }
+  .form-card__foot .fm-btn { width: 100%; }
+
   .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .site-footer__grid { grid-template-columns: 1fr; gap: var(--space-6); }
@@ -1384,4 +1611,108 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 @media print {
   .site-header, .site-nav, .cta-band, .hero__canvas { display: none !important; }
   body { background: #fff; }
+}
+
+/* --------------------------------------------------------------------------
+   11. Mobile refinement
+   Phones get shorter rhythm, a calmer display scale, comfortable tap targets
+   and no horizontal overflow anywhere.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  :root {
+    --section-pad: 60px;
+    --text-display-xl: clamp(32px, 9vw, 44px);
+    --text-display: clamp(27px, 7.6vw, 36px);
+    --text-h2: clamp(23px, 6.4vw, 30px);
+    --text-h3: 21px;
+    --text-lead: 17px;
+  }
+
+  .shell { padding-inline: var(--space-5); }
+
+  .section--tight { padding-block: var(--space-6); }
+
+  /* Tap targets: nothing interactive below 44px. */
+  .fm-btn { padding: 15px 26px; min-height: 46px; }
+  .fm-btn--sm { padding: 13px 20px; min-height: 44px; }
+  .fm-btn--lg { padding: 17px 30px; }
+  .nav-toggle { min-width: 46px; min-height: 46px; }
+  .site-nav__link { padding: 15px 0; }
+  .faq summary { padding-block: var(--space-2); }
+
+  .hero { padding-block: var(--space-8) var(--space-7); }
+  .hero .display-xl { text-wrap: pretty; }
+  .hero__actions { gap: var(--space-3); margin-top: var(--space-6); }
+  .hero__actions .fm-btn { flex: 1 1 100%; }
+
+  .page-hero { padding-block: var(--space-8) var(--space-7); }
+
+  .fm-card { padding: var(--space-5); }
+  .fm-card--gold-frame::after { inset: 8px; }
+  .fm-glass { padding: var(--space-5); }
+
+  .fm-quote { padding: var(--space-6) var(--space-5); }
+  .fm-quote blockquote { font-size: 20px; }
+
+  /* Stacked on a phone, so the vertical bars would dangle at line ends. */
+  .fm-triad { flex-direction: column; gap: var(--space-3); font-size: 11px; }
+  .fm-triad li { gap: 0; }
+  .fm-triad li:not(:last-child)::after { display: none; }
+
+  .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6) var(--space-4); }
+  .journey h3 { font-size: 10px; }
+
+  .checklist li { grid-template-columns: 32px minmax(0, 1fr); gap: var(--space-3); }
+  .fm-ring--sm { width: 32px; height: 32px; font-size: 12px; }
+  .fm-ring--sm svg { width: 15px; height: 15px; }
+
+  .timeline__list { gap: var(--space-7); }
+  .timeline__phase { font-size: 22px; }
+
+  .cta-band { padding-block: var(--space-8); }
+  .cta-band::after { inset: var(--space-4); }
+  .cta-band .display { max-width: none; }
+
+  .form-card { padding: var(--space-6) var(--space-5); }
+  .form-card__title { font-size: 25px; }
+  /* 16px minimum stops iOS Safari zooming the viewport on focus. */
+  .fm-input,
+  .fm-textarea,
+  .fm-select { font-size: 16px; }
+
+  .site-footer { padding-block: var(--space-7) var(--space-6); }
+  .site-footer__logo-tile img { height: 62px; }
+  .site-footer__base { flex-direction: column; gap: var(--space-2); }
+
+  .preloader__mark { width: 58px; }
+
+  /* Comfortable hit areas for the remaining small controls. */
+  .fm-checkbox { padding-block: var(--space-2); }
+  .fm-checkbox input { width: 20px; height: 20px; margin-top: 2px; }
+  .site-footer li a,
+  .fm-readout__value a { display: inline-block; padding-block: 6px; }
+
+  .measure { max-width: none; }
+
+  .fm-table { min-width: 380px; }
+  .fm-table th,
+  .fm-table td { padding-block: var(--space-3); }
+
+  .figure-panel figcaption,
+  .figure-dark figcaption { padding: var(--space-3) var(--space-4); }
+}
+
+@media (max-width: 420px) {
+  :root { --section-pad: 52px; }
+  .shell { padding-inline: var(--space-4); }
+  .hero .display-xl { font-size: clamp(28px, 8.6vw, 36px); }
+  .journey { grid-template-columns: 1fr; }
+  .fm-seal { width: 108px; height: 108px; }
+}
+
+/* Landscape phones: don't let a tall hero swallow the viewport. */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero { padding-block: var(--space-7) var(--space-6); }
+  .preloader__mark { width: 48px; }
 }
