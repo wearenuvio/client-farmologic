@@ -30,7 +30,7 @@ under *Open questions*.
 | **Domain** | farmologic.com |
 | **Based** | Bengaluru, Karnataka, India |
 | **Business** | Controlled-environment indoor cultivation of *Cordyceps militaris* |
-| **Model** | B2B only. One species, one facility. D2C is Phase 2, out of scope. |
+| **Model** | B2B only. One facility. D2C is Phase 2, out of scope. **Cordyceps is the first ingredient, not the whole company — see the positioning note below.** |
 | **Stage** | Pre-revenue. First cultivation Sep 2026, first harvest Dec 2026. |
 | **Tagline** | Nature. Science. Wellness. |
 | **Brand promise** | The Farmologic Standard |
@@ -270,3 +270,23 @@ Non-blocking but worth chasing:
 Full build notes, asset provenance and deployment steps: [`../README.md`](../README.md).
 Messaging rules, launch dates, the pre-book flow and the gap list from the client call:
 [`client-brief.md`](client-brief.md).
+
+
+---
+
+## Positioning update — 17 August 2026
+
+The client has **widened the positioning**. This document previously recorded "B2B only,
+cordyceps only" as a hard constraint; that is no longer accurate.
+
+The brand now leads with:
+
+> **Science-backed ingredients for the next generation of wellness.**
+> Starting with *Cordyceps militaris*.
+
+Cordyceps remains the only ingredient in production and the only one the site sells. What
+changed is that the architecture must not read as a permanent ceiling. Single-crop focus is
+now framed as **sequencing and discipline**, not as identity.
+
+Unchanged: B2B only, brand leads / product proves, the locked palette and typefaces, and the
+founder-anonymity rule. See `client-brief.md` for the full 17 Aug correction set.

@@ -298,3 +298,46 @@ notify-me (3), lead magnet (4), lab-report area (5), real imagery (6), specifica
 6. **Research citations** — does the client have papers to support the energy / stamina / immunity
    framing, or should the site stay descriptive until R&D produces its own?
 7. **Byproduct company list** — client to send; Nuvio to enrich and derive margins. (§7.1)
+
+
+---
+
+## 17 August 2026 — pre-launch corrections (applied)
+
+Source: MGM's eight numbered messages plus the "Harvest timeline and website plan" meeting
+notes. Launch **21 Aug**; content review **19 Aug**.
+
+Governing principle, in the client's words: *"Accuracy is more important than making the
+company appear bigger than it currently is."*
+
+| # | Correction | What shipped |
+| --- | --- | --- |
+| 1 | Not permanently cordyceps-only | Repositioned to "Science-backed ingredients for the next generation of wellness", *starting with* Cordyceps militaris. Single-crop-as-identity language on About rewritten as sequencing. |
+| 2 | Hero wording | "grown under laboratory control" → **"cultivated under controlled indoor conditions"**. Also removes an implied lab credential. |
+| 3 | Certification claims | "Certified" removed sitewide → "Verified by independent laboratory testing". Every "COA ships with the batch" / "in the box" → **available on request**. Post-harvest processes moved out of the present tense. New **"Where we are today"** disclosure on Home and an "Are you certified?" FAQ answering *not yet*. |
+| 4 | Regulatory | FSSAI and AYUSH removed from all footers and the About contact block → "Registrations in process". AYUSH retained only where it names a customer segment. |
+| 5 | Scientific claims | "reliably produces", "the stage that decides potency", "heat is the fastest way to lose the actives", and the wild-material contaminant assertion all softened. No citations invented. |
+| 6 | Market claims | Quantified import claim removed. Adulteration language replaced with the client's wording: *"traceability and consistency can be difficult to establish."* The Home `#integrity` section reframed from insinuation to traceability. |
+| 7 | CTA | "Pre-book a Sample" → **"Register Interest"**; enquiry heading "Register interest in the first harvest"; lead offers the first-batch specification. |
+| 8 | Philosophy | "Trust before marketing. Quality before profit. Science before claims. Transparency before sales." — band on Home, card on About. |
+
+### Found during the sweep, not in the client's list
+- `standard.html` carried a **LAB-VERIFIED seal** — a certification-style badge with no
+  accreditation behind it. Changed to the plain Farmologic seal.
+- The every-batch-COA claim was also in **JSON-LD FAQPage**, eligible for Google rich results.
+  Corrected in step with the visible copy; both now verified in parity.
+- "Accredited laboratory" was used with no accreditation body named anywhere → "independent".
+- `about.html` `og:image` pointed at a deleted file. Fixed.
+
+### Deferred, and why
+| Item | Blocker |
+| --- | --- |
+| Founder manifesto, brand-story arc | Founder video not recorded. **The design system's founder-anonymity rule has not been formally lifted** — it must be, in writing, before any named founder content ships. |
+| Product journey (farm → batch) | Photo shoot late Sept / early Oct |
+| Ingredient breakdown, heavy-metal results | No batch data until after first harvest |
+| Harvest countdown | Needs a publishable date. Recommend a date-free phase indicator on the existing grow timeline instead — momentum without a commitment that can slip. |
+| "Why Farmologic" section | Not built; traceability / transparency / purity currently live across the Standard cards and the traceability section. |
+| Analytics and tracking pixels | Scheduled for the 20th |
+
+**Open with the client:** the meeting notes say "Transparency before *sale*"; MGM's message says
+"*sales*". The site uses "sales".

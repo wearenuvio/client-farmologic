@@ -1154,6 +1154,9 @@ em, .species { font-style: italic; }
 .hero .display-xl {
   color: var(--ivory);
   margin-top: var(--space-5);
+  /* The headline is a full sentence, so it runs longer than the token's
+     display scale assumes. Held down a step to keep the CTA above the fold. */
+  font-size: clamp(34px, 4.4vw, 62px);
   /* Cormorant is a light-stemmed serif and the hero sits on a photograph.
      Slightly looser tracking, a touch more leading and a soft shadow buy back
      the legibility without changing the brand typeface. */
