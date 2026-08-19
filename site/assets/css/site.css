@@ -1149,14 +1149,15 @@ em, .species { font-style: italic; }
   opacity: .55;
 }
 
-.hero__inner { max-width: 880px; }
+.hero__inner { max-width: 1140px; }
 
 .hero .display-xl {
   color: var(--ivory);
   margin-top: var(--space-5);
-  /* The headline is a full sentence, so it runs longer than the token's
-     display scale assumes. Held down a step to keep the CTA above the fold. */
-  font-size: clamp(34px, 4.4vw, 62px);
+  /* The headline is a full sentence. Sized so it sets in two lines on desktop
+     with the explicit break after the species name, and stays above the fold. */
+  font-size: clamp(30px, 3.9vw, 54px);
+  text-wrap: normal;
   /* Cormorant is a light-stemmed serif and the hero sits on a photograph.
      Slightly looser tracking, a touch more leading and a soft shadow buy back
      the legibility without changing the brand typeface. */
