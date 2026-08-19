@@ -211,8 +211,9 @@ html:not(.js) .preloader { display: none; }
 
 .figure-dark__frame { display: block; position: relative; overflow: hidden; }
 
-/* Warm stock photography has to be pulled back into the brand's greens before
-   it can sit on a forest ground. */
+/* Optional green wash, kept for imagery that is off-palette. Not used on the
+   cordyceps photography: the orange fruiting body is the product, and tinting
+   it green would misrepresent the material. */
 .figure-dark--tint img { filter: saturate(.7) brightness(.88) contrast(1.05); }
 
 /* Green wash: `color` takes hue and saturation from the overlay and keeps the
@@ -1126,7 +1127,7 @@ em, .species { font-style: italic; }
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-image: url("../img/hero-c.jpg");
+  background-image: url("../img/harvest-in-hand.jpeg");
   background-size: cover;
   background-position: center 55%;
   opacity: .9;
