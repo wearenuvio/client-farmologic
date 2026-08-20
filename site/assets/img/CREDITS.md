@@ -27,6 +27,30 @@ The green wash (`.figure-dark--tint`) is deliberately **not** applied to any of 
 orange fruiting body is the product; tinting it green would misrepresent the material. The
 modifier is kept in the stylesheet for off-palette imagery.
 
+## Founder portrait
+
+| File | Used on | Source |
+| --- | --- | --- |
+| `founder-portrait.jpg` | Manifesto — opening section | Client-supplied studio headshot (`founder.jpeg`, 1600×1600) |
+
+Processing: cropped 4:5 around the head, resized to 1000×1250, and the white studio
+background flood-filled to the page ivory (`#F6F4EE`) from the border inward, so the portrait
+knocks out to the page ground instead of sitting on a white rectangle. The shirt is enclosed by
+the jacket and collar, so the fill never reaches it. Bottom 22% is faded with a CSS mask so the
+chest crop does not end on a hard edge. The subject is not retouched or recoloured.
+
+**Two things are outstanding:**
+
+1. **Name.** The caption currently reads "Founder / Farmologic, Bengaluru". A portrait with no
+   name attached is weaker than either a named portrait or no portrait. Send the name and it
+   goes in the `.founder-portrait__role` line above the role.
+2. **Consent to publish.** This is an identifiable photograph of a real person on a public
+   commercial site. Confirm the subject has agreed to its use here.
+
+Note that the design system's founder-anonymity rule is now effectively lifted by this
+placement. Earlier passes kept quotes attributed to "Farmologic" rather than a person on the
+strength of that rule; those attributions have been left as they are.
+
 ## Client-owned brand assets (from the Farmologic Design System)
 
 | File | Source | Notes |

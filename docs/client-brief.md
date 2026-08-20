@@ -447,3 +447,31 @@ in the same bar. The full lockup with its tagline is still used on the footer ti
 If the intent was something stronger than a size and legibility fix — a lighter or reversed
 variation of the mark for dark grounds, or a gold treatment — that needs a brand decision and a
 new export, since the design system fixes the logo colours.
+
+### Founder portrait (21 Aug, same round)
+
+Placed in the manifesto's opening section, beside "We come from a farming family" — the one
+moment on the page that makes a personal claim, so the one place a face earns its keep. Used
+once only; a second placement would cheapen it.
+
+**How it is displayed.** Floated right inside the same narrow shell every other section uses,
+rather than given its own column. A two-column split had squeezed the prose from the page's
+652px measure down to 376px, which is the exact alignment drift flagged on 20 Aug. Floating
+keeps the text starting on the page's left edge at full measure, wrapping past the portrait and
+returning to full width below it. On phones the portrait unfloats and sits above the prose at
+190px, sharing the same left edge.
+
+The white studio background is knocked out to the page ivory and the bottom of the crop is
+faded, so the portrait reads as part of the page rather than a pasted plate. No card frame: a
+gold hairline under the image carries the caption.
+
+**Needed from the client:**
+
+- **The founder's name.** The caption reads "Founder / Farmologic, Bengaluru". An unnamed
+  portrait is the weakest of the three options; a name makes it the strongest.
+- **Confirmation the subject consents** to an identifiable photograph on a public commercial site.
+
+**Worth noting:** the page now speaks as "we" on the client's own instruction, while carrying a
+single founder's portrait. That reads fine — company voice, one person's face and accountability
+behind it — but it is a deliberate combination rather than an accident, and the design system's
+founder-anonymity rule is effectively lifted by it.
