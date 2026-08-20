@@ -176,6 +176,15 @@ html:not(.js) .preloader { display: none; }
 
 .shell--narrow { max-width: var(--content-narrow); }
 
+/* Long-form sections span the page like every other section, and the running
+   text runs the full line with them — no narrow reading column, no split into
+   two. Heading, rule and body all share the same left and right edge. */
+.shell--prose .stack,
+.shell--prose .stack > *,
+.shell--prose > p,
+.shell--prose > ol,
+.shell--prose > ul { max-width: none; }
+
 /* Reading measure that sits inside a full-width shell, so the left edge stays
    on the same gutter as every other section instead of re-centring. */
 .measure { max-width: 780px; }

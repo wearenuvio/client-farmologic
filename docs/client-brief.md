@@ -554,3 +554,44 @@ the manifesto nothing. Awaiting a decision rather than acting on it.
 
 - The degrees are personal credentials stated publicly. Confirm the exact wording of both.
 - The name's spelling is taken from the supplied copy. Confirm it.
+
+### 21 Aug, later — layout and voice pass
+
+**Founder is now the first section on About**, directly under the hero, ahead of the purpose
+statement.
+
+**Every long-form section runs the full shell.** `shell--narrow` (720px) is replaced by
+`shell--prose`, which is the full 1200px shell. Centred headers in those sections are now left
+aligned, so the eyebrow, headline, rule and body all start on the same gutter. Twelve sections
+changed across the manifesto, Learn, About and The Standard.
+
+Body text runs the full line with the heading rather than sitting in a narrower column. A
+two-column setting was tried first and rejected. Measured at 1440px, heading and body now share
+the same edges exactly: 1136px wide, 162 to 1298.
+
+Note for the record: full-width body text at this shell width runs to roughly 120 characters a
+line, which is well above the 45-to-75 that is comfortable for continuous reading. This was a
+deliberate call. If it reads long on the finished pages, the two ways back are a two-column
+setting, which fills the width and keeps a short measure, or a cap on the body only.
+
+**The specification table on The Standard sits below its intro**, not beside it, and runs the
+full width. The intro paragraph keeps a reading measure.
+
+**Quote blocks are the same width everywhere.** The Standard's quote was on the narrow shell; it
+now matches Home, Learn and About at roughly 1122px.
+
+**The manifesto is back in the first person plural**, on the instruction of the same afternoon.
+Where the copy was inherently singular it is attributed rather than dropped:
+
+- "My name is Mandeep Mahadevaiah, and I come from a family that has farmed for generations"
+  becomes "Farmologic was founded by Mandeep Mahadevaiah, who comes from a family that has farmed
+  for generations."
+- "My own path led a long way from the farm first" becomes "Our founder's own path…", and "They
+  kept returning me to the same three things" becomes "…returning him…". The paragraph is kept
+  rather than cut, so the duplication with About noted above still stands and still has an open
+  recommendation.
+- Commitment 08 reads "you hear it from us first".
+- The hero no longer bills the page as a note from the founder, since the voice is the company's.
+
+The founder's name still appears once on the manifesto, in the opening, as the founder of the
+company rather than as the speaker.
