@@ -32,7 +32,8 @@ modifier is kept in the stylesheet for off-palette imagery.
 | File | Source | Notes |
 | --- | --- | --- |
 | `logo-full.png` | `design-system/assets/logo-full.png` | Locked master lockup, untouched. schema.org logo only. |
-| `logo-lockup.png` | Cropped from `logo-full.png` | Trimmed to its content box so it sets at a usable size in the header and footer. Not redrawn, not recoloured. |
+| `logo-lockup.png` | Cropped from `logo-full.png` | Trimmed to its content box. Used on the footer tile. Not redrawn, not recoloured. |
+| `logo-header.png` | Cropped from `logo-lockup.png` | Header lockup: mark and wordmark only, micro-tagline removed because it is illegible at header size. Not redrawn, not recoloured. |
 | `logo-mark.png`, `favicon-180.png`, `apple-touch-icon.png` | Cropped from the monogram inside `logo-full.png` | The brand sheet lists the monogram as an approved variation. A proper mark-only export is still outstanding. |
 
 ## Removed
@@ -40,3 +41,12 @@ modifier is kept in the stylesheet for off-palette imagery.
 `hero-c.jpg`, `stock-soil.jpg`, `stock-grow-dusk.jpg` — Unsplash placeholders, replaced by the
 real cordyceps photography above. `products-hero.jpeg`, `editorial-*.jpeg` and
 `lifestyle-banner.jpeg` were removed earlier when the product range and those sections changed.
+
+## Make in India
+
+`site.css` `.made-in-india` renders a **placeholder** badge: a CSS tricolour chip plus the words
+"Made in India". It is typographic and makes no claim to the official mark.
+
+The Make in India lion is a registered trademark of the Government of India, administered by
+DPIIT. **Do not scrape, redraw or approximate it.** To use the real mark, the client must supply
+the official artwork file and confirm they hold DPIIT permission to display it.

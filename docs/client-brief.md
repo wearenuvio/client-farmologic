@@ -381,3 +381,69 @@ Both open items were removed rather than left pending:
 
 ### Nav
 Manifesto sits after The Standard: Home / The Standard / Manifesto / Learn / About.
+
+---
+
+## 21 Aug 2026 — MGM corrections, launch-day round
+
+Nine items from WhatsApp on the morning of launch. What changed, and what is still open.
+
+| # | Ask | Applied |
+| --- | --- | --- |
+| 1 | "Logo is looking dull (Highlight or make it)" | Header now uses `logo-header.png`, a tagline-free crop of the master lockup. Not recoloured, not redrawn. |
+| 2 | "Make the company 'Registered', don't say not in process" | Every "Registrations in process" / "In process" string replaced. |
+| 3 | Manifesto: "make it WE from I" | All first-person singular converted to plural across the page. |
+| 4 | "For Make in India, put Make in India LOGO" | Typographic badge in place in all five footers. **Official artwork still needed — see below.** |
+| 5 | "We are ready for outsiders" | Pre-launch hedging removed from the standing disclosures on Home and The Standard. |
+| 6 | "Mentioning 'not yet' sounds negative… in faq" | Both FAQ answers rewritten to open affirmatively. JSON-LD updated in step. |
+| 7 | "Change company in footer to About us" | Footer heading changed on all five pages. |
+| 8 | Manifesto point 8: use "we" not "me" | Covered by item 3. Commitment 08 now reads "you hear it from us first". |
+| 9 | "Highlight the icons, keep them filled in Our philosophy" | New `.fm-ring--filled` modifier: solid forest disc, ivory glyph, soft gold halo. |
+
+### On "Registered"
+
+The wording used is **"A registered Indian company"** and **"Farmologic is a registered company
+in Bengaluru"**. That is a statement about the corporate entity, which is defensible on its own.
+
+It deliberately does **not** name a regulatory body. The 17 Aug instruction still stands:
+
+> We should only mention specific licences, registrations or certifications that Farmologic
+> actually holds. Don't use regulatory names as credibility badges unless we can substantiate them.
+
+If FSSAI, AYUSH or any other registration is now actually held, send the registration name and
+number and it can be named directly, which is stronger than the generic line currently in place.
+
+### On the "not yet" rewrites
+
+Two FAQ answers previously opened by stating what had not happened. Both now open with what is
+true, without asserting a process that is not yet running on a finished batch:
+
+- **COA** — "Yes. Our protocol specifies independent testing… before a batch is released."
+  "Our protocol specifies" is doing deliberate work here. It keeps the answer positive while
+  staying inside correction 3, which prohibits claiming that every batch has already been tested.
+- **Certified** — leads with the registered entity and the written specification, and describes
+  certification applications as under way rather than absent.
+
+### Open: the Make in India mark
+
+The Make in India lion is a **registered trademark of the Government of India**, administered by
+DPIIT. It cannot be scraped, redrawn or approximated, so what is on the site now is a plain
+typographic badge — tricolour chip, "Made in India", "Grown and processed in Bengaluru" — that
+makes no claim to the official mark.
+
+To use the real one, two things are needed:
+
+1. The official artwork file.
+2. Confirmation that Farmologic has DPIIT permission to display it.
+
+With both, the swap is one element in `.made-in-india` and takes minutes.
+
+### Note on the logo
+
+The header lockup was cropped, not restyled: the micro-tagline "NATURE. SCIENCE. WELLNESS." was
+illegible at header size, and dropping it lets the mark and wordmark set roughly twice as large
+in the same bar. The full lockup with its tagline is still used on the footer tile.
+
+If the intent was something stronger than a size and legibility fix — a lighter or reversed
+variation of the mark for dark grounds, or a gold treatment — that needs a brand decision and a
+new export, since the design system fixes the logo colours.
