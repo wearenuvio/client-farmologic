@@ -1415,18 +1415,21 @@ em, .species { font-style: italic; }
 }
 
 /* --- Founder portrait (manifesto opening) --------------------------------- */
-/* Floated rather than columned, so the prose keeps the same 652px measure as
-   every other section on the page: the text starts on the page's left edge and
-   returns to full width once it clears the portrait. The studio background is
-   knocked out to the page ground, so a hairline rule reads better than a card
-   frame, and the bottom is faded so the crop does not end on a hard cut. */
-.founder-intro::after { content: ""; display: block; clear: both; }
-
-.founder-portrait {
-  float: right;
-  width: 236px;
-  margin: 4px 0 var(--space-5) var(--space-7);
+/* Full-width section, like the commitments below it. Two columns: a fixed-width
+   portrait and the prose, capped so the measure stays close to the rest of the
+   page rather than running the full shell. The studio background is knocked out
+   to the page ground, so a hairline rule reads better than a card frame, and the
+   bottom is faded so the crop does not end on a hard cut. */
+.founder-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: center;
 }
+
+.founder-intro .stack { max-width: 68ch; }
+
+.founder-portrait { margin: 0; }
 
 .founder-portrait img {
   width: 100%;
@@ -1459,6 +1462,14 @@ em, .species { font-style: italic; }
   font-size: 12px;
   letter-spacing: .04em;
   color: var(--text-muted);
+}
+
+/* Below this the two columns leave the prose too narrow to read, so the
+   portrait sits above the text instead. */
+@media (max-width: 900px) {
+  .founder-intro { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+  .founder-intro .stack { max-width: none; }
+  .founder-portrait { width: 220px; }
 }
 
 .checklist { display: grid; gap: var(--space-5); }
@@ -1841,7 +1852,8 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 
   .preloader__mark { width: 58px; }
 
-  .founder-portrait { float: none; width: 190px; margin: 0 0 var(--space-6); }
+  .founder-intro { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+  .founder-portrait { width: 190px; }
 
   /* Uppercase tracked captions read tight at 11px on a phone. */
   .caption { font-size: 12px; }

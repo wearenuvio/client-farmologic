@@ -454,12 +454,18 @@ Placed in the manifesto's opening section, beside "We come from a farming family
 moment on the page that makes a personal claim, so the one place a face earns its keep. Used
 once only; a second placement would cheapen it.
 
-**How it is displayed.** Floated right inside the same narrow shell every other section uses,
-rather than given its own column. A two-column split had squeezed the prose from the page's
-652px measure down to 376px, which is the exact alignment drift flagged on 20 Aug. Floating
-keeps the text starting on the page's left edge at full measure, wrapping past the portrait and
-returning to full width below it. On phones the portrait unfloats and sits above the prose at
-190px, sharing the same left edge.
+**How it is displayed.** The section runs the full-width shell, like the commitments below it
+and Traceability on Home, and carries a header in the same form: eyebrow, headline with an olive
+highlight, hairline rule. Header reads "The founder / A standard is only as good as the person
+answerable for it."
+
+Below the header the portrait sits in a fixed 280px column with the prose beside it, vertically
+centred against the portrait so the block does not leave dead space under short paragraphs. The
+prose is capped rather than run to the full shell, so the measure stays readable. Below 900px the
+columns collapse and the portrait sits above the text at 220px, dropping to 190px on phones —
+without that break the tablet layout squeezed the prose to 360px.
+
+The page title is set on one line: "Nothing to hide".
 
 The white studio background is knocked out to the page ivory and the bottom of the crop is
 faded, so the portrait reads as part of the page rather than a pasted plate. No card frame: a
