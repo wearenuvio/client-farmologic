@@ -68,9 +68,21 @@ real cordyceps photography above. `products-hero.jpeg`, `editorial-*.jpeg` and
 
 ## Make in India
 
-`site.css` `.made-in-india` renders a **placeholder** badge: a CSS tricolour chip plus the words
-"Made in India". It is typographic and makes no claim to the official mark.
+| File | Used on | Source |
+| --- | --- | --- |
+| `make-in-india.png` | All five footers | Client-supplied `Make-in-India.webp`, 1200x675 |
 
-The Make in India lion is a registered trademark of the Government of India, administered by
-DPIIT. **Do not scrape, redraw or approximate it.** To use the real mark, the client must supply
-the official artwork file and confirm they hold DPIIT permission to display it.
+Processing: the white surround was flood-filled to transparent from the border inward, so the
+gear texture inside the lion is untouched, then trimmed to its bounding box and resized to 520px
+wide. The mark itself is not redrawn, recoloured or altered. It is dark artwork, so on the forest
+footer it sits on a cream tile — the same treatment the Farmologic logo gets on dark grounds.
+
+**Permission is still outstanding.** The Make in India lion is a registered trademark of the
+Government of India, administered by DPIIT. The artwork was supplied by the client and is now on
+the site on that basis, but displaying it requires DPIIT permission, and that permission has not
+been evidenced here. Confirm it before launch.
+
+Two further notes: the file supplied is a web-resolution raster, not an official vector, so it
+will not scale cleanly beyond its current footer size; and DPIIT's usage guidance covers
+placement, spacing and minimum size, which should be checked against how it is used here.
+

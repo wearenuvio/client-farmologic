@@ -1127,45 +1127,34 @@ em, .species { font-style: italic; }
 .site-footer a { color: var(--text-on-dark-muted); text-decoration: none; }
 .site-footer a:hover { color: var(--gold); }
 
-/* Made in India — placeholder mark. The official DPIIT artwork replaces the
-   flag chip and the wordmark once permission and the asset file are confirmed. */
+/* Make in India — the official mark is dark on transparent, so on the forest
+   footer it sits on a cream tile, the same treatment the logo gets. */
 .made-in-india {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-3);
   margin-top: var(--space-6);
   padding-top: var(--space-5);
   border-top: 1px solid rgba(246, 244, 238, .12);
 }
 
-.made-in-india__flag {
-  width: 26px;
-  height: 18px;
+.made-in-india__tile {
+  background: var(--ivory);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  display: inline-flex;
   flex: 0 0 auto;
-  border-radius: 2px;
-  background: linear-gradient(#FF9933 0 33.33%, #FFFFFF 33.33% 66.66%, #138808 66.66% 100%);
-  box-shadow: 0 0 0 1px rgba(246, 244, 238, .22);
 }
+
+.made-in-india__tile img { height: 46px; width: auto; display: block; }
 
 .made-in-india__text {
   font-family: var(--font-body);
   font-size: 11px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  font-weight: var(--weight-semibold);
-  color: var(--ivory);
-  line-height: 1.4;
-}
-
-.made-in-india__text em {
-  display: block;
-  font-style: normal;
-  font-size: 10px;
   letter-spacing: .1em;
-  font-weight: var(--weight-body);
-  text-transform: none;
   color: var(--text-on-dark-muted);
-  margin-top: 3px;
+  line-height: 1.5;
 }
 
 .site-footer__base {

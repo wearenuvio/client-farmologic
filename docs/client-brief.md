@@ -595,3 +595,30 @@ Where the copy was inherently singular it is attributed rather than dropped:
 
 The founder's name still appears once on the manifesto, in the opening, as the founder of the
 company rather than as the speaker.
+
+### 21 Aug, later still — duplication cut, Make in India mark placed
+
+**The duplicated biography is out of the manifesto.** Two things were removed from "What this
+is", both of which now live only on About:
+
+- The paragraph beginning "Our founder's own path led a long way from the farm first", carrying
+  the MS in Psychology, the MA in Political Science and the three things.
+- The sentence "The idea was to treat a natural ingredient as something to be understood,
+  cultivated, tested and developed with purpose, rather than simply marketed", which was About's
+  closing sentence almost word for word. What remains is the commitment it was attached to: "So
+  we commit to it plainly, in writing, before it is convenient."
+
+The farming-family origin stays in the manifesto's opening. It is the premise the whole argument
+rests on — the piece does not work without it — and it is phrased differently from About's
+version rather than repeated.
+
+**The Make in India mark is on the site.** The client supplied the artwork. The white surround
+was flood-filled to transparent so it can sit on a cream tile in the footer, the same treatment
+the Farmologic logo gets on dark grounds. The mark is not redrawn, recoloured or altered.
+
+**Permission for it is still outstanding.** The lion is a registered trademark of the Government
+of India, administered by DPIIT, and displaying it requires their permission. The artwork being
+supplied is not the same thing as the permission being held. Confirm before launch. Two smaller
+points: the file is a web-resolution raster rather than an official vector, so it will not scale
+beyond its current footer size; and DPIIT publishes usage rules on placement, clear space and
+minimum size that should be checked against how it is set here.
