@@ -341,3 +341,47 @@ company appear bigger than it currently is."*
 
 **Open with the client:** the meeting notes say "Transparency before *sale*"; MGM's message says
 "*sales*". The site uses "sales".
+
+
+---
+
+## 17 August 2026 — founder manifesto added (`manifesto.html`)
+
+Client supplied the copy and asked for it as a page. Built as **Manifesto**, second in the nav,
+priority 0.9 in the sitemap.
+
+**Founder anonymity is intact.** The piece is first person but names nobody, carries no photo
+and no bio, and is signed "— Farmologic" per the design-system rule. Nothing here required the
+rule to be lifted. That still applies to any future named content.
+
+Reviewed against the eight corrections before publishing:
+
+| Correction | How the manifesto sits with it |
+| --- | --- |
+| 1 positioning | Reinforces it. "Every product we put our name to", "whatever Farmologic makes" — ingredient company, not a cordyceps company. |
+| 2 hero wording | Not touched. |
+| 3 certification | Compliant, and unusually so: every commitment is an explicit future promise, and the page's whole argument is that a standard published *before* the fact is the only kind worth anything. No claim of a credential. |
+| 4 regulatory | Refers to India's health-supplement labelling rules as an external requirement, not as something Farmologic holds. Permitted under the naming carve-out. |
+| 5 scientific | No efficacy claim. Commitment 07 is an explicit anti-claim: "No cure, no hack, no boost by a multiple." |
+| 6 market claims | **The one open item.** See below. |
+| 7 CTA | Uses the standard "Register interest". |
+| 8 philosophy | Consistent with, and effectively the long form of, the four-line philosophy. |
+
+### Two things the client must close before launch
+
+1. **The enforcement figures need their citation.** 2,23,808 analysed / 40,023 non-conforming /
+   1,918 convictions, FY 2025–26, attributed on the page to a parliamentary tabling. Correction 6
+   requires a credible source for exactly this kind of statement, and attribution in prose is not
+   a citation. No source was invented. A `TODO(source)` marker sits beside the block in
+   `manifesto.html`. Add the reference and a link, or drop the figures.
+   The client's own provisional caveat is published beneath them, which helps but does not
+   substitute for a source.
+
+2. **The scene is still missing.** The supplied copy contained a bracketed placeholder,
+   "[ONE REAL MOMENT GOES HERE: a specific scene, not a general grievance]". It has been kept
+   out of the rendered page as an HTML comment rather than shipped as visible placeholder text.
+   The paragraph reads without it; it will read considerably better with it.
+
+### Note on nav length
+The nav was fixed at Home / The Standard / Learn / About on the client's instruction. Manifesto
+makes five. Worth confirming they are happy with the extra item.
