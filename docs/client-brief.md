@@ -367,21 +367,17 @@ Reviewed against the eight corrections before publishing:
 | 7 CTA | Uses the standard "Register interest". |
 | 8 philosophy | Consistent with, and effectively the long form of, the four-line philosophy. |
 
-### Two things the client must close before launch
+### Cut on the client's instruction
 
-1. **The enforcement figures need their citation.** 2,23,808 analysed / 40,023 non-conforming /
-   1,918 convictions, FY 2025–26, attributed on the page to a parliamentary tabling. Correction 6
-   requires a credible source for exactly this kind of statement, and attribution in prose is not
-   a citation. No source was invented. A `TODO(source)` marker sits beside the block in
-   `manifesto.html`. Add the reference and a link, or drop the figures.
-   The client's own provisional caveat is published beneath them, which helps but does not
-   substitute for a source.
+Both open items were removed rather than left pending:
 
-2. **The scene is still missing.** The supplied copy contained a bracketed placeholder,
-   "[ONE REAL MOMENT GOES HERE: a specific scene, not a general grievance]". It has been kept
-   out of the rendered page as an HTML comment rather than shipped as visible placeholder text.
-   The paragraph reads without it; it will read considerably better with it.
+- **The enforcement figures** (samples analysed / non-conforming / convictions, FY 2025-26) are
+  gone. They carried no citation, and correction 6 requires one for exactly that kind of
+  statement. "Why wellness is worse" opened by referring back to those numbers, so it was
+  re-stitched to stand on its own.
+- **The unwritten founder scene** placeholder is gone, comment marker and all.
+- The closing "Nothing added. Nothing hidden. Check us." panel and the "You can't see what's
+  been done to it" pull quote were also cut. The page ends on the standard CTA band.
 
-### Note on nav length
-The nav was fixed at Home / The Standard / Learn / About on the client's instruction. Manifesto
-makes five. Worth confirming they are happy with the extra item.
+### Nav
+Manifesto sits after The Standard: Home / The Standard / Manifesto / Learn / About.
