@@ -1425,7 +1425,9 @@ em, .species { font-style: italic; }
   align-items: center;
 }
 
-.founder-intro .stack { max-width: 68ch; }
+/* No cap: the column already sets the measure, and a cap here left the text
+   short of the heading's right edge. */
+.founder-intro .stack { max-width: none; }
 
 .founder-portrait { margin: 0; }
 
