@@ -481,3 +481,76 @@ gold hairline under the image carries the caption.
 single founder's portrait. That reads fine — company voice, one person's face and accountability
 behind it — but it is a deliberate combination rather than an accident, and the design system's
 founder-anonymity rule is effectively lifted by it.
+
+---
+
+## 21 Aug 2026 — founder moves to About, manifesto copy updated
+
+The founder is now named on the site for the first time: **Mandeep Mahadevaiah**.
+
+### What moved
+
+The founder portrait and section left `manifesto.html` and now sit on `about.html`, above the
+contact block, under "Meet the founder / Nature, science, and something built with purpose."
+Same full-width treatment: header, 280px portrait column, prose beside it, collapsing below
+900px. The caption now carries the name; the role line reads "Founder, Farmologic". The section
+closes on a "Read the manifesto" outline button, matching the Traceability pattern on Home.
+
+### What changed in the manifesto
+
+The supplied wording was swapped into the sections the page already had. No new sections were
+added, per the instruction. In summary:
+
+- The page returns to first person singular throughout, and the founder names himself in the
+  opening paragraph.
+- The opening gains the line about what growing up with the land teaches.
+- "What this is" gains the paragraph about the route from psychology and political science back
+  to soil, and about treating an ingredient as something to be understood rather than marketed.
+- The regulatory sentence is firmer: "Under India's rules … every pack must list its ingredients
+  in order and declare how much of each active ingredient it contains."
+- Meta description and og:description updated.
+
+### Four blocks in the supplied copy that were NOT added
+
+Each was removed earlier on the client's own explicit instruction, so re-adding them was treated
+as needing a fresh decision rather than assumed:
+
+| Block | Why it is not on the page |
+| --- | --- |
+| "The scale of it" — 2,23,808 samples / 40,023 non-conforming / 1,918 convictions, FY 2025-26 | Cut on 20 Aug: "then dont have those two items". The figures carry no citation, and correction 6 requires one for exactly this kind of statement. The supplied copy attributes them to "the government's own, tabled in Parliament" but names no document. |
+| "Meet the founder" closing section | The founder has moved to About. Keeping it here would put the same biography on the page twice. |
+| "Nothing added. / Nothing hidden. / Check us." | Cut on 20 Aug: "remove this section too". |
+| "You can't see what's been done to it. That's the whole point of doing it." | Cut on 20 Aug: "remove this too". |
+
+Any of the four can be restored in minutes. The figures panel needs the source document named
+first — the FSSAI annual enforcement return, or whichever tabled reply the numbers come from.
+
+### Conflict on record
+
+On the morning of 21 Aug the instruction was: *"In manifesto make it 'WE' from 'I'"*, and
+separately, *"me in 8th point of manifesto instead use we"*. The manifesto copy supplied later
+the same day is written entirely in the first person singular, and that is what is now live,
+on the basis that it is the newer instruction. Commitment 08 reads "you hear it from me first"
+again. Worth one line of confirmation.
+
+### Duplication between About and the manifesto
+
+Four facts now appear on both pages. The "understood, cultivated, tested" line is close to
+verbatim:
+
+| | About | Manifesto |
+| --- | --- | --- |
+| Farming family | "Coming from a family with generations of experience in farming, I grew up with a deep appreciation for the land, cultivation, patience, and the value of producing something with care." | "I come from a family that has farmed for generations… Growing up with the land teaches you cultivation and patience, and the worth of producing something by care rather than by shortcut." |
+| Education | "I hold an MS in Psychology from the United States and an MA in Political Science." | "an MS in Psychology in the United States, an MA in Political Science, years spent across disciplines" |
+| The three things | "three things I deeply believe in: nature, science, and purposeful entrepreneurship" | "the same three things, though: nature, science, and building something with purpose" |
+| Purpose over marketing | "natural ingredients are not simply marketed, but understood, cultivated, tested and developed with purpose" | "to treat a natural ingredient as something to be understood, cultivated, tested and developed with purpose, rather than simply marketed" |
+
+**Recommendation:** cut the education-and-three-things paragraph from the manifesto's "What this
+is" and leave the biography to About. The manifesto needs the farm origin, because the whole
+argument rests on it; it does not need the CV. That removes three of the four overlaps and costs
+the manifesto nothing. Awaiting a decision rather than acting on it.
+
+### Still to verify
+
+- The degrees are personal credentials stated publicly. Confirm the exact wording of both.
+- The name's spelling is taken from the supplied copy. Confirm it.
