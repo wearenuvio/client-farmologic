@@ -95,8 +95,7 @@ COPY = {
         "head": "farmologic.io",
         "head_italic": False,
         "sub": "Science-backed ingredients for the next generation of wellness. "
-               "Starting with <em>Cordyceps militaris</em>, cultivated under "
-               "controlled indoor conditions in Bengaluru.",
+               "Starting with <em>Cordyceps militaris</em>.",
         "quote": "The finest harvest begins with the highest standards.",
     },
 }
