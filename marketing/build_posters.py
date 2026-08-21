@@ -97,8 +97,7 @@ COPY = {
         "sub": "Science-backed ingredients for the next generation of wellness. "
                "Starting with <em>Cordyceps militaris</em>, cultivated under "
                "controlled indoor conditions in Bengaluru.",
-        "domain": "Register interest",
-        "note": "B2B ingredient supply \u00b7 Bengaluru, India",
+        "quote": "The finest harvest begins with the highest standards.",
     },
 }
 
@@ -154,17 +153,17 @@ def css(fonts):
     rgba(19,42,29,.30) 60%, rgba(19,42,29,0) 84%)}}
 
 .inner{{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;
-  justify-content:space-between;padding:var(--pad)}}
-.wide .inner{{justify-content:center;gap:calc(var(--u) * 52)}}
-.wide header{{line-height:0}}
+  justify-content:flex-end;padding:var(--pad)}}
+.wide .inner{{justify-content:center}}
 
 /* Instagram lays its own UI over roughly the top and bottom 250px of a story,
    so the content is kept inside that. */
 .story .inner{{padding-top:calc(var(--u) * 150);padding-bottom:calc(var(--u) * 250)}}
 
 .tile{{display:inline-block;background:var(--ivory);border-radius:calc(var(--u) * 10);
-  padding:calc(var(--u) * 15) calc(var(--u) * 19);line-height:0}}
-.tile img{{display:block;width:auto;height:calc(var(--u) * 58)}}
+  padding:calc(var(--u) * 15) calc(var(--u) * 19);line-height:0;
+  margin-bottom:calc(var(--u) * 44)}}
+.tile img{{display:block;width:auto;height:calc(var(--u) * 76)}}
 
 .eyebrow{{display:flex;align-items:center;gap:.85em;color:var(--gold);
   font-weight:600;letter-spacing:.30em;text-transform:uppercase;
@@ -208,7 +207,7 @@ h1{{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight
 .wide.studio     .motif{{right:4%;bottom:14%;width:26%;height:70%}}
 
 .studio .tile{{background:none;padding:0;border-radius:0}}
-.studio .tile img{{height:calc(var(--u) * 66)}}
+.studio .tile img{{height:calc(var(--u) * 124)}}
 .studio .foot{{position:relative;z-index:2}}
 
 /* Brand gold is 2.19:1 on bone and fails as text, so text here takes the
@@ -224,6 +223,14 @@ h1{{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight
 .studio .domain{{color:var(--forest);font-size:calc(var(--u) * 32);letter-spacing:.02em}}
 .studio .domain::after{{content:"  →";color:var(--gold-text)}}
 .studio .note{{color:rgba(30,61,43,.55)}}
+
+/* Replaces the call to action: a short gold tick, then the line, set quietly
+   in the display face so it reads as a closing remark rather than a headline. */
+.tick{{display:block;width:calc(var(--u) * 54);height:max(1px, calc(var(--u) * 2));
+  background:var(--gold);margin:calc(var(--u) * 46) 0 calc(var(--u) * 24)}}
+.quote{{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;
+  font-size:calc(var(--u) * 34);line-height:1.32;color:rgba(30,61,43,.62);
+  max-width:calc(var(--u) * 800)}}
 """
 
 
@@ -234,17 +241,23 @@ def board_markup(variant, shape, w, h, photo_uri, focal, logo_uri, motif_uri):
     else:
         ground = (f'<div class="shot" style="background-image:url({photo_uri});'
                   f'background-position:{focal}"></div><div class="shade"></div>')
+    if variant == "studio":
+        tail = (f'<span class="tick"></span>'
+                f'<p class="quote">{c["quote"]}</p>')
+    else:
+        tail = (f'<span class="hair"></span>'
+                f'<p class="domain">{c["domain"]}</p>'
+                f'<p class="note">{c["note"]}</p>')
+
     return f"""<div class="board {shape} {variant}" style="width:{w}px;height:{h}px;--u:{scale_for(w, h)}px">
   {ground}
   <div class="inner">
-    <header><span class="tile"><img src="{logo_uri}" alt="Farmologic"></span></header>
     <div class="foot">
+      <span class="tile"><img src="{logo_uri}" alt="Farmologic"></span>
       <p class="eyebrow"><i></i>{c['eyebrow']}</p>
       <h1>{c['head']}</h1>
       <p class="sub">{c['sub']}</p>
-      <span class="hair"></span>
-      <p class="domain">{c['domain']}</p>
-      <p class="note">{c['note']}</p>
+      {tail}
     </div>
   </div>
 </div>"""

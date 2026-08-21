@@ -8,8 +8,12 @@ ground. Leads with the species. The one that stops a scroll.
 
 **`studio--`** — no photograph. A bone ground, the logo set directly on it
 because a light ground needs no tile, and the cordyceps drawn as line art and
-ghosted back to a watermark. Leads with the domain. The quiet one, and the one
-that keeps working after launch week.
+ghosted back to a watermark. Leads with the domain and closes on the brand's
+own line rather than a call to action. The quiet one, and the one that keeps
+working after launch week.
+
+In both sets the logo sits at the head of the type stack rather than in a
+corner, so the whole composition reads as one block anchored to the foot.
 
 | Placement | Size |
 | --- | --- |
