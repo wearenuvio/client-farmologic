@@ -47,7 +47,7 @@ curl -H "Authorization: Bearer $UPSTASH_REDIS_REST_TOKEN" \
 
 Add `RESEND_API_KEY` from resend.com. Until `farmologic.io` is verified there,
 Resend only allows sending from `onboarding@resend.dev`, which is the default
-`ENQUIRY_FROM`. Verify the domain to send as `trade@farmologic.io`.
+`ENQUIRY_FROM`. Verify the domain to send as `contact@farmologic.io`.
 
 ## What is stored
 
@@ -73,9 +73,12 @@ with the old shape keeps working.
 Note that `check.mjs` understands this: an extensionless link resolves against
 `<name>.html` on disk.
 
-**Still on the old domain:** the trade address is `trade@farmologic.com`. That
-is a mailbox rather than a URL, so it has been left alone. Confirm whether it
-should move to `.io` with the site.
+The trade address moved with the domain and is `contact@farmologic.io`
+everywhere: the footers, the About contact readout, the enquiry form's mail
+fallback, and `ENQUIRY_TO` on the endpoint. The mailbox has to exist and accept
+mail before launch, and if enquiries are emailed through Resend, `farmologic.io`
+needs verifying there so mail can be sent from that address rather than
+`onboarding@resend.dev`.
 
 ## Before the site goes public
 

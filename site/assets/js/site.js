@@ -274,7 +274,7 @@
           if (key === 'company_website_hp' || !String(value).trim()) return;
           lines.push(key.replace(/_/g, ' ').toUpperCase() + ': ' + value);
         });
-        return 'mailto:trade@farmologic.com' +
+        return 'mailto:contact@farmologic.io' +
           '?subject=' + encodeURIComponent('Bulk enquiry — ' + (data.get('company') || 'Farmologic')) +
           '&body=' + encodeURIComponent(lines.join('\n'));
       };
@@ -301,7 +301,7 @@
           if (key === 'company_website_hp' || !String(value).trim()) return;
           lines.push(key.replace(/_/g, ' ').toUpperCase() + ': ' + value);
         });
-        window.location.href = 'mailto:trade@farmologic.com' +
+        window.location.href = 'mailto:contact@farmologic.io' +
           '?subject=' + encodeURIComponent('Bulk enquiry — ' + (data.get('company') || 'Farmologic')) +
           '&body=' + encodeURIComponent(lines.join('\n'));
         done('Your email client is opening with the enquiry pre-filled. Send it and we will reply within one working day.');

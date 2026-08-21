@@ -236,7 +236,7 @@ Blocking before launch:
 1. **Specification figures.** Cordycepin ≥ 0.5 % w/w, adenosine, moisture ≤ 8 %, ash ≤ 8 %,
    80 mesh, 24-month shelf life, MOQ 1 kg, 50 g sample, 4–6 week lead time, and every grow set
    point on `standard.html`. All **[assumption]**. Confirm or replace.
-2. **Trade email.** The site uses `trade@farmologic.com` throughout. Confirm it exists.
+2. **Trade email.** Settled on 21 Aug: the site uses `contact@farmologic.io` throughout. The mailbox still has to exist and accept mail before launch.
 3. **Enquiry endpoint.** Both forms fall back to `mailto:` until `data-endpoint` is pointed at a
    real POST target (Formspree, Netlify Forms, CRM webhook).
 4. **FSSAI and AYUSH numbers.** Currently stated as "on request".

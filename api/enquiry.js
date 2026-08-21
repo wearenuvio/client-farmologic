@@ -19,7 +19,7 @@
  */
 
 const LIMITS = { company: 200, name: 120, email: 254, message: 4000 };
-const TO = process.env.ENQUIRY_TO || 'trade@farmologic.com';
+const TO = process.env.ENQUIRY_TO || 'contact@farmologic.io';
 const FROM = process.env.ENQUIRY_FROM || 'Farmologic site <onboarding@resend.dev>';
 
 /* Best-effort throttle. Serverless instances are per-region and recycled, so

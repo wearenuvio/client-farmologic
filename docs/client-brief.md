@@ -250,7 +250,7 @@ not a failure signal. "Let us not expect anything. Trust the process."
   member so access does not have to be requested each time.
 - Automated mail needed for: contact acknowledgement, pre-book confirmation, harvest-stage
   notification.
-- ⚠️ The site currently uses `trade@farmologic.com` throughout. Confirm or change.
+- ✅ Settled 21 Aug: the site uses `contact@farmologic.io` throughout, replacing `trade@farmologic.com`.
 
 ---
 
@@ -294,7 +294,7 @@ notify-me (3), lead magnet (4), lab-report area (5), real imagery (6), specifica
 2. **Launch month** — is the 21st in August? (§9)
 3. **September 25 event** — which city? (§7.2)
 4. **Specification figures** — confirm or replace every number in §11 row 8 before launch.
-5. **Email address** — is `trade@farmologic.com` correct?
+5. **Email address** — settled 21 Aug: `contact@farmologic.io`.
 6. **Research citations** — does the client have papers to support the energy / stamina / immunity
    framing, or should the site stay descriptive until R&D produces its own?
 7. **Byproduct company list** — client to send; Nuvio to enrich and derive margins. (§7.1)
