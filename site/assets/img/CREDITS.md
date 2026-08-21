@@ -57,7 +57,7 @@ strength of that rule; those attributions have been left as they are.
 | --- | --- | --- |
 | `logo-full.png` | `design-system/assets/logo-full.png` | Locked master lockup, untouched. schema.org logo only. |
 | `logo-lockup.png` | Cropped from `logo-full.png` | Trimmed to its content box. Used on the footer tile. Not redrawn, not recoloured. |
-| `logo-header.png` | Rendered from the brand deck's vector art | Header lockup: mark and wordmark, no micro-tagline, which is illegible at header size. 986x527, replacing a 359x214 crop of a crop. Used in the site nav and on the poster artboards, so both carry the same lockup. Not redrawn, not recoloured. |
+| `logo-header.png` | Cropped from `logo-lockup.png` | Header lockup: mark and wordmark only, micro-tagline removed because it is illegible at header size. Not redrawn, not recoloured. |
 | `logo-lockup-hi.png` | Rendered from the brand deck's vector art | Full lockup, dark, on transparency. Page 04 of `Farmologic-Brand-Presentation.pdf` rendered at 6000px and knocked out. The only high-resolution source there is: `logo-full.png` is 500x500. Used on the poster artboards. |
 | `logo-lockup-reversed.png` | Same source, cover page | Full lockup reversed to ivory, for dark grounds. |
 | `logo-lockup-reversed-nt.png` | Cropped from the above | Reversed lockup without the tagline and rule, which lose legibility over photography. |
