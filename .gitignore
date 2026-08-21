@@ -25,3 +25,9 @@ dist/
 .cache/
 .netlify/
 .vercel/
+
+# Generated poster artboards — rebuild with marketing/build_posters.py.
+# Each inlines its fonts and photography as data URIs, so they are large and
+# entirely reproducible.
+marketing/boards/
+marketing/posters.html
