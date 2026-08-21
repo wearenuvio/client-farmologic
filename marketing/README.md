@@ -72,8 +72,12 @@ Cormorant Garamond and Montserrat, the site's own faces, in `fonts/`
 (SIL Open Font License). Palette is taken from `site/assets/css/tokens.css`:
 forest `#132A1D`, ivory `#F6F4EE`, gold `#C8A24A`.
 
-The logo is never recoloured. On photography it sits on a cream tile, which is
-the design system's rule for the logo on dark grounds.
+The logo is never recoloured. Both lockups are rendered from the vector art in
+the brand deck rather than upscaled from `logo-full.png`, which is only
+500x500: the dark one for the bone ground, the reversed one for photography.
+That removed the cream tile the logo used to sit on, since the reversed lockup
+needs no box. On photography the tagline and its rule are dropped, because at
+poster size they lose against the picture.
 
 ## Before posting
 

@@ -143,11 +143,11 @@ def css(fonts):
    as depth in the picture rather than a panel laid over it. */
 .board .shade{{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    radial-gradient(120% 70% at 8% 100%, rgba(19,42,29,.55) 0%, rgba(19,42,29,0) 62%),
+    radial-gradient(130% 82% at 4% 100%, rgba(19,42,29,.62) 0%, rgba(19,42,29,0) 68%),
     linear-gradient(180deg,
-      rgba(19,42,29,0) 0%, rgba(19,42,29,0) 26%,
-      rgba(19,42,29,.28) 42%, rgba(19,42,29,.60) 58%,
-      rgba(19,42,29,.84) 74%, rgba(19,42,29,.95) 88%, rgba(19,42,29,.98) 100%)}}
+      rgba(19,42,29,0) 0%, rgba(19,42,29,0) 20%,
+      rgba(19,42,29,.30) 36%, rgba(19,42,29,.62) 53%,
+      rgba(19,42,29,.85) 70%, rgba(19,42,29,.95) 86%, rgba(19,42,29,.98) 100%)}}
 .wide .shade{{background:linear-gradient(100deg,
     rgba(19,42,29,.93) 0%, rgba(19,42,29,.80) 34%,
     rgba(19,42,29,.30) 60%, rgba(19,42,29,0) 84%)}}
@@ -160,10 +160,11 @@ def css(fonts):
    so the content is kept inside that. */
 .story .inner{{padding-top:calc(var(--u) * 150);padding-bottom:calc(var(--u) * 250)}}
 
-.tile{{display:inline-block;background:var(--ivory);border-radius:calc(var(--u) * 10);
-  padding:calc(var(--u) * 15) calc(var(--u) * 19);line-height:0;
-  margin-bottom:calc(var(--u) * 44)}}
-.tile img{{display:block;width:auto;height:calc(var(--u) * 76)}}
+/* The lockups are lifted from the brand deck's vector art, one dark and one
+   reversed, so neither ground needs the logo boxed on a tile any more. */
+.tile{{display:inline-block;line-height:0;margin-bottom:calc(var(--u) * 54)}}
+.tile img{{display:block;width:auto;height:calc(var(--u) * 150)}}
+.photo .tile img{{filter:drop-shadow(0 calc(var(--u) * 2) calc(var(--u) * 26) rgba(9,20,14,.62))}}
 
 .eyebrow{{display:flex;align-items:center;gap:.85em;color:var(--gold);
   font-weight:600;letter-spacing:.30em;text-transform:uppercase;
@@ -172,15 +173,16 @@ def css(fonts):
 
 h1{{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;
   font-size:calc(var(--u) * 112);line-height:1.04;letter-spacing:-.004em;
-  margin-top:.30em;text-shadow:0 2px calc(var(--u) * 30) rgba(9,20,14,.5)}}
+  margin-top:calc(var(--u) * 26);
+  text-shadow:0 calc(var(--u) * 2) calc(var(--u) * 30) rgba(9,20,14,.5)}}
 
-.sub{{margin-top:.95em;font-size:calc(var(--u) * 27);line-height:1.56;font-weight:400;
-  color:rgba(246,244,238,.80)}}
+.sub{{margin-top:calc(var(--u) * 26);font-size:calc(var(--u) * 27);line-height:1.56;
+  font-weight:400;color:rgba(246,244,238,.80)}}
 .sub em{{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;
   font-size:1.34em;line-height:1;color:var(--ivory)}}
 
 .hair{{display:block;height:max(1px, calc(var(--u) * 2));width:100%;
-  margin:calc(var(--u) * 40) 0 calc(var(--u) * 30);
+  margin:calc(var(--u) * 46) 0 calc(var(--u) * 30);
   background:linear-gradient(90deg,var(--gold) 0%,rgba(200,162,74,.22) 74%,
     rgba(200,162,74,0) 100%)}}
 
@@ -206,8 +208,7 @@ h1{{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight
 .story.studio    .motif{{right:0;bottom:40%;width:88%;height:30%}}
 .wide.studio     .motif{{right:4%;bottom:14%;width:26%;height:70%}}
 
-.studio .tile{{background:none;padding:0;border-radius:0}}
-.studio .tile img{{height:calc(var(--u) * 124)}}
+.studio .tile img{{height:calc(var(--u) * 210)}}
 .studio .foot{{position:relative;z-index:2}}
 
 /* Brand gold is 2.19:1 on bone and fails as text, so text here takes the
@@ -227,7 +228,7 @@ h1{{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight
 /* Replaces the call to action: a short gold tick, then the line, set quietly
    in the display face so it reads as a closing remark rather than a headline. */
 .tick{{display:block;width:calc(var(--u) * 54);height:max(1px, calc(var(--u) * 2));
-  background:var(--gold);margin:calc(var(--u) * 46) 0 calc(var(--u) * 24)}}
+  background:var(--gold);margin:calc(var(--u) * 50) 0 calc(var(--u) * 26)}}
 .quote{{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;
   font-size:calc(var(--u) * 34);line-height:1.32;color:rgba(30,61,43,.62);
   max-width:calc(var(--u) * 800)}}
@@ -265,7 +266,10 @@ def board_markup(variant, shape, w, h, photo_uri, focal, logo_uri, motif_uri):
 
 def main():
     fonts = {k: data_uri(os.path.join(FONTS, v), "font/ttf") for k, v in FONT_FILES.items()}
-    logo = data_uri(os.path.join(IMG, "logo-header.png"), "image/png")
+    logos = {
+        "studio": data_uri(os.path.join(IMG, "logo-lockup-hi.png"), "image/png"),
+        "photo": data_uri(os.path.join(IMG, "logo-lockup-reversed-nt.png"), "image/png"),
+    }
     photos = {}
     style = css(fonts)
 
@@ -279,7 +283,8 @@ def main():
                 photos[photo] = data_uri(os.path.join(IMG, photo), "image/jpeg")
             motif = cordyceps_svg(seed=3 if shape != "wide" else 5,
                                   n=9 if shape != "wide" else 7)
-            markup = board_markup(variant, shape, w, h, photos[photo], focal, logo, motif)
+            markup = board_markup(variant, shape, w, h, photos[photo], focal,
+                                  logos[variant], motif)
 
             slug = f"{variant}--{name}-{w}x{h}"
             with open(os.path.join(BOARD_DIR, f"{slug}.html"), "w") as fh:

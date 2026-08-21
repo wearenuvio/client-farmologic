@@ -58,6 +58,9 @@ strength of that rule; those attributions have been left as they are.
 | `logo-full.png` | `design-system/assets/logo-full.png` | Locked master lockup, untouched. schema.org logo only. |
 | `logo-lockup.png` | Cropped from `logo-full.png` | Trimmed to its content box. Used on the footer tile. Not redrawn, not recoloured. |
 | `logo-header.png` | Cropped from `logo-lockup.png` | Header lockup: mark and wordmark only, micro-tagline removed because it is illegible at header size. Not redrawn, not recoloured. |
+| `logo-lockup-hi.png` | Rendered from the brand deck's vector art | Full lockup, dark, on transparency. Page 04 of `Farmologic-Brand-Presentation.pdf` rendered at 6000px and knocked out. The only high-resolution source there is: `logo-full.png` is 500x500. Used on the poster artboards. |
+| `logo-lockup-reversed.png` | Same source, cover page | Full lockup reversed to ivory, for dark grounds. |
+| `logo-lockup-reversed-nt.png` | Cropped from the above | Reversed lockup without the tagline and rule, which lose legibility over photography. |
 | `logo-mark.png`, `favicon-180.png`, `apple-touch-icon.png` | Cropped from the monogram inside `logo-full.png` | The brand sheet lists the monogram as an approved variation. A proper mark-only export is still outstanding. |
 
 ## Removed
