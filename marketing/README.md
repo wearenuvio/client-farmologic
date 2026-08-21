@@ -19,6 +19,27 @@ that keeps working after launch week.
 | `linkedin-x` | 1200×630 — LinkedIn, X, any link preview |
 | `whatsapp-square` | 800×800 — WhatsApp Business, lighter for messaging |
 
+## How sizing works
+
+Every dimension is `calc(var(--u) * n)`. `--u` is one number per artboard,
+computed by `scale_for()`, so a single set of numbers holds its proportions at
+1200×630 and at 1080×1920 alike. There are no per-format font sizes to drift
+apart. Change `112` on `h1` and every board moves together.
+
+`--u` is the width bounded by the height, softened so the spread between
+formats is a nudge rather than a cliff, with a floor so a short landscape board
+still reads at thumbnail size:
+
+| Board | `--u` |
+| --- | --- |
+| 1080×1080 | 0.837 |
+| 1080×1350 | 1.0 |
+| 1080×1920 | 1.0 |
+| 1200×630 | 0.62 |
+| 800×800 | 0.658 |
+
+Stories keep Instagram's roughly 250px of UI clear at top and bottom.
+
 ## The motif
 
 The cordyceps line art is generated, not drawn by hand: `cordyceps_svg()` in
