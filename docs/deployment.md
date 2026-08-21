@@ -56,17 +56,26 @@ from, the sender's IP and user agent. The IP and user agent are kept for abuse
 handling. There is no privacy policy on the site yet; one is needed before
 launch, and it should say what is collected and how long it is kept.
 
-## Domain
+## Domain and URLs
 
-`farmologic.io`. Point it at the project in Vercel → Settings → Domains. Note
-that these still refer to `farmologic.com` and need changing when the domain is
-confirmed:
+Live on `https://www.farmologic.io`.
 
-- `<link rel="canonical">` on all six pages
-- `og:url` and `og:image` on all six pages
-- `site/sitemap.xml`
-- `site/robots.txt`
-- the JSON-LD blocks on the home page
+`vercel.json` sets `cleanUrls: true`, so pages are served without the `.html`
+extension: `site/standard.html` is served at `/standard`. Every internal link,
+including the nav, the footers, the buttons and the calls to action, is
+root-relative and extensionless — `/standard`, `/manifesto`, `/#enquiry` — and
+the home page is `/` rather than `/index.html`. Canonicals, `og:url`, the
+JSON-LD graph, `sitemap.xml` and `robots.txt` all use the same shape.
+
+Vercel redirects `/standard.html` to `/standard`, so anything already shared
+with the old shape keeps working.
+
+Note that `check.mjs` understands this: an extensionless link resolves against
+`<name>.html` on disk.
+
+**Still on the old domain:** the trade address is `trade@farmologic.com`. That
+is a mailbox rather than a URL, so it has been left alone. Confirm whether it
+should move to `.io` with the site.
 
 ## Before the site goes public
 

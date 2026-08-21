@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://farmologic.com/sitemap.xml
+Sitemap: https://www.farmologic.io/sitemap.xml

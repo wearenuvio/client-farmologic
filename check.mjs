@@ -34,7 +34,11 @@ for (const page of pages) {
     let file = ref.split('?')[0].split('#')[0];
     if (!file || file === '/') continue;
     if (file.startsWith('/')) file = file.slice(1);
-    if (!existsSync(join(root, file))) add(page, `missing file → ${ref}`);
+    // The site is served with Vercel's cleanUrls, so internal links are
+    // extensionless: /standard resolves to site/standard.html on disk.
+    const resolved = existsSync(join(root, file)) ? file
+      : existsSync(join(root, `${file}.html`)) ? `${file}.html` : null;
+    if (!resolved) add(page, `missing file → ${ref}`);
   }
 
   for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) {

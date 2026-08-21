@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Farmologic — farmologic.com
+   Farmologic — farmologic.io
    All behaviour here is progressive enhancement. Every word of copy exists in
    the server-rendered HTML; nothing below is required to read or use the site.
    ========================================================================== */
