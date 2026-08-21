@@ -163,7 +163,7 @@ def css(fonts):
 /* The lockups are lifted from the brand deck's vector art, one dark and one
    reversed, so neither ground needs the logo boxed on a tile any more. */
 .tile{{display:inline-block;line-height:0;margin-bottom:calc(var(--u) * 54)}}
-.tile img{{display:block;width:auto;height:calc(var(--u) * 150)}}
+.tile img{{display:block;width:auto;height:calc(var(--u) * 200)}}
 .photo .tile img{{filter:drop-shadow(0 calc(var(--u) * 2) calc(var(--u) * 26) rgba(9,20,14,.62))}}
 
 .eyebrow{{display:flex;align-items:center;gap:.85em;color:var(--gold);
@@ -208,7 +208,7 @@ h1{{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight
 .story.studio    .motif{{right:0;bottom:40%;width:88%;height:30%}}
 .wide.studio     .motif{{right:4%;bottom:14%;width:26%;height:70%}}
 
-.studio .tile img{{height:calc(var(--u) * 210)}}
+.studio .tile img{{height:calc(var(--u) * 200)}}
 .studio .foot{{position:relative;z-index:2}}
 
 /* Brand gold is 2.19:1 on bone and fails as text, so text here takes the
@@ -267,7 +267,7 @@ def board_markup(variant, shape, w, h, photo_uri, focal, logo_uri, motif_uri):
 def main():
     fonts = {k: data_uri(os.path.join(FONTS, v), "font/ttf") for k, v in FONT_FILES.items()}
     logos = {
-        "studio": data_uri(os.path.join(IMG, "logo-lockup-hi.png"), "image/png"),
+        "studio": data_uri(os.path.join(IMG, "poster-logo.png"), "image/png"),
         "photo": data_uri(os.path.join(IMG, "logo-lockup-reversed-nt.png"), "image/png"),
     }
     photos = {}
