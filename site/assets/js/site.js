@@ -268,13 +268,26 @@
         if (submit) { submit.setAttribute('aria-disabled', 'true'); submit.textContent = 'Enquiry sent'; }
       };
 
+      var mailtoHref = function () {
+        var lines = [];
+        data.forEach(function (value, key) {
+          if (key === 'company_website_hp' || !String(value).trim()) return;
+          lines.push(key.replace(/_/g, ' ').toUpperCase() + ': ' + value);
+        });
+        return 'mailto:trade@farmologic.com' +
+          '?subject=' + encodeURIComponent('Bulk enquiry — ' + (data.get('company') || 'Farmologic')) +
+          '&body=' + encodeURIComponent(lines.join('\n'));
+      };
+
+      /* If the endpoint is down the enquiry still has somewhere to go: the
+         message is handed to the visitor's mail client, pre-filled. */
       var fail = function () {
         if (status) {
-          status.innerHTML = 'That did not send. Email us directly at ' +
-            '<a href="mailto:trade@farmologic.com">trade@farmologic.com</a> and we will pick it up the same day.';
+          status.innerHTML = 'That did not send. <a href="' + mailtoHref() + '">Send it by email instead</a> ' +
+            'and we will pick it up the same day.';
           status.classList.add('is-visible');
         }
-        if (submit) submit.removeAttribute('aria-disabled');
+        if (submit) { submit.removeAttribute('aria-disabled'); submit.textContent = 'Send enquiry'; }
       };
 
       if (submit) { submit.setAttribute('aria-disabled', 'true'); submit.textContent = 'Sending…'; }
@@ -295,7 +308,17 @@
         return;
       }
 
-      fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+      var payload = {};
+      data.forEach(function (value, key) { payload[key] = value; });
+      var consentBox = form.querySelector('[name="consent"]');
+      payload.consent = consentBox ? consentBox.checked : true;
+      payload.page = window.location.pathname + window.location.hash;
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload)
+      })
         .then(function (r) {
           if (!r.ok) throw new Error('bad status');
           done('Thank you. Your enquiry is with the trade desk — we reply within one working day.');
