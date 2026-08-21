@@ -1,19 +1,30 @@
 # Launch posters — farmologic.io
 
-Full-bleed photography, type set on the image. No panel, no card: the
-photograph runs edge to edge and a feathered scrim gives the type its ground.
+Two directions, each in five placements. `launch/` holds the finished PNGs.
 
-## Files
+**`photo--`** — full-bleed photography, type set on the image. No panel and no
+card: the frame runs edge to edge and a feathered scrim gives the type its
+ground. Leads with the species. The one that stops a scroll.
 
-`launch/` holds the finished PNGs, one per placement:
+**`studio--`** — no photograph. A bone ground, the logo set directly on it
+because a light ground needs no tile, and the cordyceps drawn as line art and
+ghosted back to a watermark. Leads with the domain. The quiet one, and the one
+that keeps working after launch week.
 
-| File | Size | Placement |
-| --- | --- | --- |
-| `instagram-post-1080x1080.png` | 1080×1080 | Instagram / Facebook feed, square |
-| `instagram-portrait-1080x1350.png` | 1080×1350 | Instagram feed, portrait — the largest a feed post can occupy |
-| `instagram-story-1080x1920.png` | 1080×1920 | Instagram / Facebook story, WhatsApp status, reel cover |
-| `linkedin-x-1200x630.png` | 1200×630 | LinkedIn, X, and any link preview |
-| `whatsapp-square-800x800.png` | 800×800 | WhatsApp Business, lighter for messaging |
+| Placement | Size |
+| --- | --- |
+| `instagram-post` | 1080×1080 — Instagram / Facebook feed, square |
+| `instagram-portrait` | 1080×1350 — the largest a feed post can occupy |
+| `instagram-story` | 1080×1920 — story, WhatsApp status, reel cover |
+| `linkedin-x` | 1200×630 — LinkedIn, X, any link preview |
+| `whatsapp-square` | 800×800 — WhatsApp Business, lighter for messaging |
+
+## The motif
+
+The cordyceps line art is generated, not drawn by hand: `cordyceps_svg()` in
+the build script lays out club-shaped stromata with varied height, lean and
+width from a fixed seed, so it is reproducible but not mechanical. Change
+`seed` for a different cluster.
 
 ## Rebuilding
 
@@ -41,6 +52,7 @@ the design system's rule for the logo on dark grounds.
 
 ## Before posting
 
-The photography is the same set as the website, and its licensing is still
-unresolved — see `site/assets/img/CREDITS.md`. That applies here too, and more
-sharply: a social post travels further than a page does.
+The `photo--` set uses the same photography as the website, and its licensing
+is still unresolved — see `site/assets/img/CREDITS.md`. That applies here too,
+and more sharply: a social post travels further than a page does. The
+`studio--` set uses no photography at all, so it is clear on that count.
