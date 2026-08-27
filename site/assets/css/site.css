@@ -1913,3 +1913,38 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .hero { padding-block: var(--space-7) var(--space-6); }
   .preloader__mark { width: 48px; }
 }
+
+/* Provenance note inside a figcaption. The cordyceps photography is not
+   Farmologic's own material — the company is pre-harvest — so every such image
+   says so rather than letting the reader assume it is the product. Set quieter
+   than the caption it follows so it reads as an aside, not a second caption. */
+.fig-note {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: 11px;
+  letter-spacing: .04em;
+  line-height: 1.5;
+  opacity: .72;
+}
+
+/* Reference list. Numbered so a claim can be pointed at, and set at body size
+   rather than small print — the citations are part of the argument, not a
+   disclaimer to be buried. */
+.ref-list {
+  margin-top: var(--space-6);
+  padding-left: var(--space-6);
+  max-width: 78ch;
+  list-style: decimal;      /* the global reset strips markers; these need them */
+}
+
+.ref-list li {
+  margin-bottom: var(--space-5);
+  padding-left: var(--space-2);
+  line-height: 1.75;
+  list-style: decimal;
+}
+
+.ref-list li::marker { color: var(--gold); font-weight: var(--weight-semibold); }
+
+.ref-list a { color: var(--forest); text-underline-offset: 3px; }
+.ref-list a:hover { color: var(--gold); }

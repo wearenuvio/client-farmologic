@@ -27,6 +27,22 @@ The green wash (`.figure-dark--tint`) is deliberately **not** applied to any of 
 orange fruiting body is the product; tinting it green would misrepresent the material. The
 modifier is kept in the stylesheet for off-palette imagery.
 
+## On-page labelling (added 27 Aug 2026)
+
+Every cordyceps and facility photograph now carries a visible note in its
+`<figcaption>`: *"Illustrative photograph — Farmologic is pre-harvest, so this is
+not our own material."* The `/learn` references section repeats it site-wide and
+points here.
+
+This is a statement of fact, not a licence. It removes the risk of a reader
+taking these images as evidence of a Farmologic batch or facility output, but it
+does **not** resolve the licensing question above. Written permission or a
+licence is still required for each photograph before launch.
+
+No photographer or rights-holder credit appears on the site, because none is
+known — the files were supplied without provenance. Once origin is established,
+credits belong in the captions alongside the illustrative note.
+
 ## Founder portrait
 
 | File | Used on | Source |
