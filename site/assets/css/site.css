@@ -1942,3 +1942,20 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 
 .src-note a { color: inherit; text-underline-offset: 2px; }
 .src-note a:hover { color: var(--gold); }
+
+/* Footer social. Sits under the About column, matching the link colour already
+   used there rather than introducing a new accent. */
+.social { margin-top: var(--space-4); }
+
+.social__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-on-dark-muted);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.social__link:hover { color: var(--ivory); }
+.social__icon { width: 17px; height: 17px; flex: 0 0 auto; }
