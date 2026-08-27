@@ -308,19 +308,29 @@
         return;
       }
 
-      var payload = {};
-      data.forEach(function (value, key) { payload[key] = value; });
+      /* The endpoint is a Google Apps Script web app, which reads fields from
+         e.parameter — that means form-encoding, not JSON. Sending a
+         URLSearchParams body makes the browser set
+         application/x-www-form-urlencoded, which is a CORS-simple content type,
+         so the POST goes straight through with no preflight. Field names here
+         must match the sheet's header row exactly; they are case sensitive. */
+      var body = new URLSearchParams();
+      data.forEach(function (value, key) { body.append(key, value); });
       var consentBox = form.querySelector('[name="consent"]');
-      payload.consent = consentBox ? consentBox.checked : true;
-      payload.page = window.location.pathname + window.location.hash;
+      body.set('consent', (consentBox ? consentBox.checked : true) ? 'yes' : 'no');
+      body.set('page', window.location.pathname + window.location.hash);
 
-      fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(payload)
-      })
-        .then(function (r) {
-          if (!r.ok) throw new Error('bad status');
+      /* Apps Script answers /exec with a 302 to script.googleusercontent.com, and
+         that redirect carries no Access-Control-Allow-Origin header. In normal
+         CORS mode the browser refuses to follow it and the request never lands,
+         so the POST goes out in no-cors mode instead: it is delivered and the
+         row is written, but the response is opaque and cannot be inspected.
+         The trade-off is deliberate — we can confirm the request left the
+         browser, not that the sheet accepted it. A submission that fails
+         server-side will look identical to a success here, so the sheet is the
+         only place a dropped enquiry would show up. */
+      fetch(endpoint, { method: 'POST', mode: 'no-cors', body: body })
+        .then(function () {
           done('Thank you. Your enquiry is with the trade desk — we reply within one working day.');
           form.reset();
         })
