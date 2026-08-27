@@ -1913,3 +1913,49 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .hero { padding-block: var(--space-7) var(--space-6); }
   .preloader__mark { width: 48px; }
 }
+
+/* Provenance note under a caption. The captions are uppercase and letterspaced;
+   this deliberately is not — it should read as a quiet aside, not a second
+   caption competing with the first. */
+.fig-note {
+  display: block;
+  margin-top: 6px;
+  font-size: 10.5px;
+  letter-spacing: .02em;
+  text-transform: none;
+  font-style: italic;
+  opacity: .55;
+}
+
+/* Inline source note. Sits directly under the claim it supports, set small and
+   quiet so it reads as a footnote in place rather than interrupting the prose.
+   Deliberately not a separate references section — the citation is most useful
+   next to the sentence it backs. */
+.src-note {
+  margin-top: var(--space-2);
+  font-size: 11.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  opacity: .8;
+  max-width: 68ch;
+}
+
+.src-note a { color: inherit; text-underline-offset: 2px; }
+.src-note a:hover { color: var(--gold); }
+
+/* Footer social. Sits under the About column, matching the link colour already
+   used there rather than introducing a new accent. */
+.social { margin-top: var(--space-4); }
+
+.social__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-on-dark-muted);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.social__link:hover { color: var(--ivory); }
+.social__icon { width: 17px; height: 17px; flex: 0 0 auto; }
