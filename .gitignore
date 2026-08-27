@@ -31,3 +31,10 @@ dist/
 # entirely reproducible.
 marketing/boards/
 marketing/posters.html
+
+# Audit screenshots — 12MB of captures, regenerate with
+# `claude-seo run capture_screenshot.py`. The written findings are tracked.
+farmologic.io-audit/screenshots/
+
+# Local preview server log
+.dev/*.log

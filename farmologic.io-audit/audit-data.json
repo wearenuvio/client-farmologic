@@ -1,0 +1,455 @@
+{
+  "summary": {
+    "health_score": 69,
+    "business_type": "B2B ingredient supplier (wellness / nutraceutical raw material), pre-harvest, Bengaluru India",
+    "score_note": "Performance (CWV) weight 10% excluded and remaining weights renormalised \u2014 PageSpeed Insights returned 'rate limit exceeded' on the shared public quota and no CWV number was obtained. Performance is unmeasured, not passing.",
+    "top_findings": [
+      "Enquiry form posts to /api/enquiry which returns 404 \u2014 the site's only conversion path is broken in production",
+      "Repo-root vercel.json is not applied in production: 4 security headers missing, asset cache 1000x weaker than declared, trailingSlash unenforced",
+      "Trailing-slash URLs return 200 and render completely unstyled because relative asset paths resolve one level deep",
+      "Page-type mismatch: all 5 pages are brand/manifesto type while 4 of 6 target queries reward product, directory or comparison pages (SXO 34/100)",
+      "Zero external citations and no named technical authority behind HPLC/ICP-MS/microbiology claims on a YMYL-adjacent wellness ingredient"
+    ],
+    "quick_wins": [
+      "Fix Vercel project Root Directory \u2014 one settings change resolves 5 separate findings including the broken form",
+      "Add BreadcrumbList JSON-LD: breadcrumbs already render visibly on all 4 subpages, markup is pure gap",
+      "Rewrite /manifesto title 'Nothing to hide | Farmologic' \u2014 28 chars, matches no query",
+      "Front-load 'Bengaluru' in the 85-char homepage title before SERP truncation cuts it",
+      "Move Google Fonts @import out of tokens.css into a <link> \u2014 removes one serial round-trip"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 74,
+      "weight": 22,
+      "what_works": [
+        "robots.txt + sitemap valid and correctly declared",
+        ".html duplicate-URL risk fully closed",
+        "correct canonicals and index,follow on all 5 pages",
+        "404.html correctly noindex",
+        "Brotli live, JS deferred, confirmed non-SPA",
+        "hreflang correctly judged unnecessary for single en-IN locale"
+      ],
+      "findings": [
+        {
+          "title": "Security headers declared in vercel.json but absent in production",
+          "severity": "Critical",
+          "description": "X-Content-Type-Options, Referrer-Policy, X-Frame-Options, Permissions-Policy all set for /(.*) in vercel.json; none present live on cache-busted requests. Only platform HSTS appears.",
+          "recommendation": "Correct the Vercel project scope so repo-root vercel.json is read."
+        },
+        {
+          "title": "Asset immutable cache rule not applied",
+          "severity": "High",
+          "description": "/assets/(.*) declared max-age=31536000, immutable; serves max-age=0, must-revalidate. Repeat visitors re-validate 3.4 MB of imagery per page view.",
+          "recommendation": "Same root cause as above."
+        },
+        {
+          "title": "Trailing-slash URLs return 200 and render unstyled",
+          "severity": "High",
+          "description": "trailingSlash:false not enforced. /about/ returns 200; relative stylesheet href resolves to /about/assets/css/site.css which 404s, so the page renders with no CSS. Canonicals contain index risk but users see a broken page.",
+          "recommendation": "Enforce trailingSlash:false, or make asset paths root-relative as defence in depth."
+        },
+        {
+          "title": "Custom 404 page never served",
+          "severity": "Medium",
+          "description": "Status is correctly 404 but body is Vercel's generic 79-byte text/plain NOT_FOUND; the branded 3393-byte site/404.html with noindex and recovery links never reaches visitors.",
+          "recommendation": "Restore deployment scope."
+        },
+        {
+          "title": "Google Fonts loaded via @import inside tokens.css",
+          "severity": "High",
+          "description": "Chain is index.html -> tokens.css -> @import fonts. The font request cannot start until tokens.css lands, inserting a serial round-trip into the render path on every page.",
+          "recommendation": "Move to a <link rel=stylesheet> in <head> with preconnect."
+        },
+        {
+          "title": "No Content-Security-Policy",
+          "severity": "Medium",
+          "description": "Absent from source entirely, not merely undeployed.",
+          "recommendation": "Add a CSP to the vercel.json headers block."
+        },
+        {
+          "title": "Sitemap has no lastmod",
+          "severity": "Medium",
+          "description": "None of the 5 URLs carry lastmod, though live Last-Modified headers prove pages update at different times.",
+          "recommendation": "Emit lastmod per URL at build time."
+        },
+        {
+          "title": "Two-hop redirect from bare http origin",
+          "severity": "Low",
+          "description": "http://farmologic.io/ takes 308 (protocol) then 308 (host) to reach https://www.farmologic.io/.",
+          "recommendation": "Collapse to a single hop where the platform allows."
+        },
+        {
+          "title": "Dead interest-cohort FLoC token in Permissions-Policy",
+          "severity": "Low",
+          "description": "FLoC was abandoned; the token is inert.",
+          "recommendation": "Remove."
+        },
+        {
+          "title": "HSTS lacks includeSubDomains and preload",
+          "severity": "Low",
+          "description": "max-age=63072000 present without the additional directives.",
+          "recommendation": "Add both if all subdomains are HTTPS-ready."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 64,
+      "weight": 23,
+      "what_works": [
+        "Trustworthiness 78/100 \u2014 repeated candid pre-harvest disclosure, 'we name a certification once it is held, and never before'",
+        "Readability strong, jargon defined on first use",
+        "No AI-generated-content red flags; copy reads deliberately human-authored",
+        "Visible contact information"
+      ],
+      "findings": [
+        {
+          "title": "No named technical or scientific authority",
+          "severity": "Critical",
+          "description": "HPLC, ICP-MS and microbiology panel claims are asserted with total confidence with nobody credentialed attributed anywhere. Authoritativeness scored 40/100.",
+          "recommendation": "Attribute assay and method claims to a named person with stated credentials."
+        },
+        {
+          "title": "Zero external citations site-wide",
+          "severity": "Critical",
+          "description": "Every claim is self-referential, including /manifesto invoking India's FSSAI supplement-labelling rules without linking to them.",
+          "recommendation": "Cite peer-reviewed cordycepin literature and the actual regulatory text."
+        },
+        {
+          "title": "Certification FAQ answer reads as completed guarantee",
+          "severity": "High",
+          "description": "Homepage 'Are you certified?' answer phrases a written protocol and in-progress applications as though they were achieved certification. Regulatory-risk-adjacent and out of step with the site's otherwise scrupulous pre-harvest honesty.",
+          "recommendation": "Rephrase to match the standard set by the rest of the site."
+        },
+        {
+          "title": "Heavy verbatim duplication across four pages",
+          "severity": "High",
+          "description": "Four-obligations structure, 'trust before marketing' lines and the lab-testing panel description repeat near-identically across /, /about, /manifesto and /standard.",
+          "recommendation": "Designate one canonical location per claim and link to it."
+        },
+        {
+          "title": "/learn is shallow relative to formulator need",
+          "severity": "High",
+          "description": "808 words; missing potency ranges, format and solubility guidance, India regulatory status, and any stability framework.",
+          "recommendation": "Deepen with the data a formulator needs to specify the material."
+        },
+        {
+          "title": "No freshness signals",
+          "severity": "Medium",
+          "description": "No dateModified anywhere despite explicitly time-sensitive claims.",
+          "recommendation": "Add visible and structured dates."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 76,
+      "weight": 20,
+      "what_works": [
+        "Exactly one h1 per page across all 6 files",
+        "Unique self-referencing canonicals on all 5 indexable pages",
+        "Unique, subject-specific meta descriptions",
+        "Coherent heading hierarchy with no level skipping",
+        "No orphan pages"
+      ],
+      "findings": [
+        {
+          "title": "Three titles exceed SERP display width",
+          "severity": "Medium",
+          "description": "Homepage 85 chars, /about 79, /standard 72. Google truncates near 60. The homepage loses '| Bengaluru' \u2014 its only geographic qualifier, on a site whose most critical query gap is 'cordyceps militaris supplier india'.",
+          "recommendation": "Front-load distinguishing and geographic terms; shorten the descriptive tail."
+        },
+        {
+          "title": "/manifesto title carries no query-matching term",
+          "severity": "Medium",
+          "description": "'Nothing to hide | Farmologic', 28 chars, entirely brand-voice, matching no informational or commercial query \u2014 on the joint-longest page of the site.",
+          "recommendation": "Keep the voice, add the substance."
+        },
+        {
+          "title": "Internal linking is complete but flat",
+          "severity": "Medium",
+          "description": "4 unique internal targets from every page, all nav and footer driven. Zero in-body contextual links from a claim to the page substantiating it.",
+          "recommendation": "Add contextual links: /learn COA section -> /standard spec; homepage certification FAQ -> /standard."
+        },
+        {
+          "title": "No date signals anywhere",
+          "severity": "Medium",
+          "description": "No datePublished, dateModified or visible time element against explicitly perishable claims.",
+          "recommendation": "Add both visible and structured dates."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 58,
+      "weight": 10,
+      "what_works": [
+        "Existing homepage block validates clean with no errors",
+        "@context correct, all URLs absolute, ContactPoint and WebSite properties correctly typed",
+        "Logo confirmed 500x500, meets Google minimum",
+        "HowTo correctly absent from /learn numbered steps (deprecated Sept 2023)",
+        "Product/Offer correctly absent given price-on-request B2B model"
+      ],
+      "findings": [
+        {
+          "title": "Four of five pages carry zero JSON-LD",
+          "severity": "High",
+          "description": "/about, /learn, /manifesto and /standard have no structured data at all, despite /learn and /standard holding the most extractable content on the site.",
+          "recommendation": "Ready-to-paste blocks with consistent cross-page @ids are in findings/schema.md. Verify datePublished values before shipping \u2014 they were derived from first git-commit dates."
+        },
+        {
+          "title": "No BreadcrumbList anywhere",
+          "severity": "High",
+          "description": "All four subpages already render a visible breadcrumb in HTML; none is expressed in structured data.",
+          "recommendation": "Add BreadcrumbList to each subpage."
+        },
+        {
+          "title": "No Person entity for the founder",
+          "severity": "High",
+          "description": "Full bio and portrait for Mandeep Mahadevaiah on /about, referenced again on /manifesto, with no Person markup.",
+          "recommendation": "Add Person and reference it as Organization.founder and as author on /manifesto."
+        },
+        {
+          "title": "FAQPage present but no longer yields rich results",
+          "severity": "Info",
+          "description": "Valid. Google retired FAQ rich results for all sites on 7 May 2026. No SERP feature remains and AI citation benefit is unconfirmed.",
+          "recommendation": "Keep it. Do not remove, and do not add new FAQPage for SERP benefit."
+        },
+        {
+          "title": "No sameAs",
+          "severity": "Info",
+          "description": "No social or external profiles linked site-wide.",
+          "recommendation": "Add once real profiles exist \u2014 see the GEO authority finding."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": null,
+      "weight": 10,
+      "what_works": [
+        "Brotli compression live",
+        "JS deferred",
+        "Explicit width/height on 100% of img elements \u2014 the main CLS defence already in place"
+      ],
+      "findings": [
+        {
+          "title": "Core Web Vitals not measured",
+          "severity": "Info",
+          "description": "PageSpeed Insights returned 'PSI rate limit exceeded (240 QPM / 25,000 QPD)' for both mobile and desktop on the shared public quota. No lab or field CWV number was obtained. The assigned performance agent stalled retrying this.",
+          "recommendation": "Supply a Google API key or retry later. Treat this category as unmeasured, not passing."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 61,
+      "weight": 10,
+      "what_works": [
+        "Technical accessibility 88/100 \u2014 curl -A GPTBot returns full server-rendered HTML, no JS barrier",
+        "No crawler-specific blocks for GPTBot, OAI-SearchBot, ClaudeBot or PerplexityBot",
+        "Unusually good species disambiguation: Cordyceps militaris vs Ophiocordyceps sinensis explicitly distinguished",
+        "FAQPage entries are genuinely self-contained 40-90 word answers"
+      ],
+      "findings": [
+        {
+          "title": "No external entity corroboration",
+          "severity": "High",
+          "description": "Authority and brand signals scored 30/100. No sameAs, no LinkedIn, Wikipedia, YouTube or Reddit presence. Not fixable through on-page work alone.",
+          "recommendation": "Establish external entity presence; this is the binding constraint on AI visibility."
+        },
+        {
+          "title": "Structured data on only 1 of 5 pages",
+          "severity": "High",
+          "description": "The most citation-worthy pages \u2014 /learn and /standard \u2014 carry none.",
+          "recommendation": "See schema findings."
+        },
+        {
+          "title": "Best factual content is fragmented below citable block length",
+          "severity": "Medium",
+          "description": "/learn body prose runs 24-66 words per paragraph against roughly 134-167 words for a self-contained citable block, so its strongest material cannot be lifted as a single answer.",
+          "recommendation": "Consolidate key explanations into self-contained blocks."
+        },
+        {
+          "title": "No dates against time-sensitive claims",
+          "severity": "Medium",
+          "description": "'Pre-harvest' and 'certification applications are under way' will silently become false with nothing marking when they were true.",
+          "recommendation": "Add dateModified."
+        },
+        {
+          "title": "llms.txt absent",
+          "severity": "Low",
+          "description": "Returns 404. Honestly low priority \u2014 Google Search ignores it and no major crawler is confirmed to require it.",
+          "recommendation": "Optional."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 72,
+      "weight": 5,
+      "what_works": [
+        "Alt text on 100% of img elements (26/26)",
+        "Explicit width and height on 100% \u2014 CLS protection already in place",
+        "Selective lazy loading with eager above-fold heroes",
+        "max-image-preview:large set site-wide"
+      ],
+      "findings": [
+        {
+          "title": "No modern image formats",
+          "severity": "High",
+          "description": "20 files, 3.4 MB, zero WebP, zero AVIF. Largest: grow-room.jpeg 508 KB, jars-close.jpeg 436 KB, grow-room-pair.jpeg 384 KB. Two PNGs are photographic-weight.",
+          "recommendation": "AVIF with WebP fallback; expect 50-70% reduction."
+        },
+        {
+          "title": "No responsive image markup",
+          "severity": "High",
+          "description": "Zero srcset or picture occurrences site-wide. Sources are 1800px; a 390px phone at DPR 2 downloads roughly 5x the pixels it can display.",
+          "recommendation": "Wrap in <picture> with srcset and sizes; keep existing width/height."
+        },
+        {
+          "title": "Hero bytes spent under a heavy overlay",
+          "severity": "Medium",
+          "description": "Hero photography sits behind a dark scrim that destroys most of the visual information the bytes encode, while still being the likely LCP element.",
+          "recommendation": "Compress overlaid heroes far more aggressively; the overlay masks artifacts."
+        },
+        {
+          "title": "OG images not at recommended aspect ratio",
+          "severity": "Low",
+          "description": "Cards reuse on-page photography at ratio 1.50, and /standard uses a 1:1 square, against the 1.91 layout social platforms expect. og:image:width and og:image:height are absent.",
+          "recommendation": "Produce dedicated 1200x630 cards per page and declare dimensions."
+        }
+      ]
+    },
+    {
+      "name": "Search Experience (SXO)",
+      "score": 34,
+      "weight": 0,
+      "what_works": [
+        "/learn is well-matched structurally for 'how to read a COA cordyceps' \u2014 correct H2 with the right H3 sub-questions",
+        "Mobile above-the-fold does real work: value proposition, substantiation and two CTAs without scrolling"
+      ],
+      "findings": [
+        {
+          "title": "Page-type mismatch on 4 of 6 target queries",
+          "severity": "Critical",
+          "description": "All five pages are brand/manifesto type. 'cordyceps militaris supplier india', 'cordyceps militaris vs sinensis' and 'bulk cordyceps militaris extract' are all CRITICAL gaps whose SERPs reward product, directory or comparison pages the site does not have.",
+          "recommendation": "Build a comparison page and a specification/sample-COA page."
+        },
+        {
+          "title": "Procurement buyer is the worst-served persona",
+          "severity": "High",
+          "description": "Scored 42/100 \u2014 no price band, no MOQ, no certifications shown.",
+          "recommendation": "Publish a specification page with commercial parameters."
+        },
+        {
+          "title": "No numeric cordycepin data for formulators",
+          "severity": "High",
+          "description": "Formulator scored 46/100; 'cordycepin content' is a HIGH-severity query gap with no number anywhere on the site.",
+          "recommendation": "Publish an assay range with method attribution."
+        },
+        {
+          "title": "One generic CTA for every persona",
+          "severity": "Medium",
+          "description": "Every page funnels to 'Register interest' even where /about promises that enquiries, specifications, samples and facility visits are differentiated paths.",
+          "recommendation": "Split into request-specification and request-sample at minimum."
+        }
+      ]
+    },
+    {
+      "name": "Visual / Mobile",
+      "score": 84,
+      "weight": 0,
+      "what_works": [
+        "Mobile fold carries value proposition, substantiation and two CTAs on the homepage without scrolling",
+        "/learn names its audience \u2014 formulator, QA lead, procurement manager \u2014 in the first paragraph",
+        "Typography holds at 390px with no clipping or overflow",
+        "Reveal animations degrade correctly for both no-JS and prefers-reduced-motion",
+        "Breadcrumb renders visibly on subpages"
+      ],
+      "findings": [
+        {
+          "title": "Rendered page weight is photography-driven",
+          "severity": "Info",
+          "description": "Full-page mobile captures: /learn 1849 KB, / 1193 KB, /about 898 KB. Weight tracks image count almost exactly, confirming image delivery is the dominant performance lever.",
+          "recommendation": "See image findings."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 0: Restore the deployment contract",
+        "timeframe": "Today",
+        "items": [
+          "Fix Vercel project scope so repo-root vercel.json and api/ deploy",
+          "Verify /api/enquiry returns 200 \u2014 the enquiry form is currently posting into a 404",
+          "Confirm the four security headers appear live",
+          "Confirm assets serve max-age=31536000, immutable",
+          "Confirm trailing-slash URLs 308 instead of serving unstyled 200s",
+          "Confirm the branded 404 page is served"
+        ]
+      },
+      {
+        "name": "Phase 1: Close the page-type gap",
+        "timeframe": "Weeks 1-3",
+        "items": [
+          "Build militaris vs sinensis comparison page",
+          "Publish specification / sample COA page with MOQ and price band",
+          "Publish numeric cordycepin assay data with method attribution",
+          "Differentiate the CTA by persona"
+        ]
+      },
+      {
+        "name": "Phase 2: Authority and evidence",
+        "timeframe": "Weeks 2-6",
+        "items": [
+          "Attribute HPLC/ICP-MS/microbiology claims to a named credentialed person",
+          "Add external citations to peer-reviewed literature and FSSAI regulatory text",
+          "Rephrase the certification FAQ answer to match the site's pre-harvest honesty",
+          "Establish external entity corroboration and sameAs"
+        ]
+      },
+      {
+        "name": "Phase 3: Structured data and on-page",
+        "timeframe": "Weeks 3-5",
+        "items": [
+          "Add JSON-LD to the four bare pages, verifying datePublished first",
+          "Add BreadcrumbList to all four subpages",
+          "Add Person entity for the founder",
+          "Fix three over-length titles and the keyword-free /manifesto title",
+          "Add date signals",
+          "Add contextual in-body internal links",
+          "Consolidate duplicated claims"
+        ]
+      },
+      {
+        "name": "Phase 4: Delivery performance",
+        "timeframe": "Weeks 4-6",
+        "items": [
+          "AVIF/WebP with responsive srcset in one markup pass",
+          "Compress overlaid heroes harder",
+          "Move Google Fonts @import out of tokens.css into a head link",
+          "Add a Content-Security-Policy",
+          "Measure CWV once a PSI API key is available \u2014 currently unmeasured"
+        ]
+      },
+      {
+        "name": "Phase 5: Monitoring",
+        "timeframe": "Ongoing",
+        "items": [
+          "Capture a drift baseline once Phase 0 lands so config regressions surface by diff",
+          "Re-run PSI with a key",
+          "Watch /api/enquiry status, header presence, asset cache directives and trailing-slash redirects"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}
