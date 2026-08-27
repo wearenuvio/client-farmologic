@@ -1036,17 +1036,31 @@ em, .species { font-style: italic; }
   height: 84px;
 }
 
-.site-header__logo { display: flex; align-items: center; flex: 0 0 auto; }
+.site-header__logo { display: flex; align-items: center; gap: 11px; flex: 0 0 auto; text-decoration: none; }
 
-/* The header uses a tagline-free crop of the master lockup, so the ink fills
-   the bar instead of the padding. Never recoloured — only cropped and sized. */
-.site-header__logo img {
-  height: 58px;
+/* The lockup is composed, not baked: the mark is a transparent PNG and the
+   wordmark is live text in the display face. Keeps it crisp at every size and
+   lets the two halves size independently. */
+.site-header__mark {
+  height: 36px;
   width: auto;
   transition: height var(--dur-fast) var(--ease-out);
 }
 
-.site-header.is-stuck .site-header__logo img { height: 46px; }
+.site-header__word {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--forest-deep);
+  line-height: 1;
+  white-space: nowrap;
+  transition: font-size var(--dur-fast) var(--ease-out);
+}
+
+.site-header.is-stuck .site-header__mark { height: 30px; }
+.site-header.is-stuck .site-header__word { font-size: 19px; }
 
 .site-nav { display: flex; align-items: center; gap: var(--space-7); }
 
@@ -1104,14 +1118,20 @@ em, .species { font-style: italic; }
 
 /* The logo is dark-on-light and never recoloured — on dark grounds it sits
    on a cream tile, per the design system's logo rules. */
-.site-footer__logo-tile {
-  background: var(--ivory);
-  display: inline-block;
-  padding: 16px 22px;
-  border-radius: var(--radius-sm);
-}
+.site-footer__lockup { display: flex; align-items: center; gap: 11px; }
 
-.site-footer__logo-tile img { height: 78px; width: auto; }
+.site-footer__mark { height: 46px; width: auto; }
+
+.site-footer__word {
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  line-height: 1;
+  white-space: nowrap;
+}
 
 .site-footer h2 {
   font-family: var(--font-body);
@@ -1760,8 +1780,10 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .site-footer__grid { grid-template-columns: 1fr; gap: var(--space-6); }
 
   .site-header__inner { height: 72px; }
-  .site-header__logo img { height: 46px; }
-  .site-header.is-stuck .site-header__logo img { height: 40px; }
+  .site-header__mark { height: 34px; }
+  .site-header__word { font-size: 21px; }
+  .site-header.is-stuck .site-header__mark { height: 30px; }
+  .site-header.is-stuck .site-header__word { font-size: 18px; }
 
   .fm-quote { padding: var(--space-6) var(--space-5); }
 
@@ -1847,7 +1869,8 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
   .fm-select { font-size: 16px; }
 
   .site-footer { padding-block: var(--space-7) var(--space-6); }
-  .site-footer__logo-tile img { height: 62px; }
+  .site-footer__mark { height: 38px; }
+  .site-footer__word { font-size: 22px; }
   .site-footer__base { flex-direction: column; gap: var(--space-2); }
 
   .preloader__mark { width: 58px; }
